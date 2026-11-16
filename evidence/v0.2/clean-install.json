@@ -1,0 +1,95 @@
+{
+  "package": "repertorio-mcp 0.2.0",
+  "source_checkout_on_import_path": false,
+  "checks": [
+    {
+      "command": [
+        "--db",
+        "<PRIVATE_CHECK_DIR>/doctor.sqlite3",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "command": [
+        "demo"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "command": [
+        "setup",
+        "--output",
+        "<PRIVATE_CHECK_DIR>/setup"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "command": [
+        "experiment",
+        "prepare",
+        "--output",
+        "<PRIVATE_CHECK_DIR>/experiment"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "command": [
+        "study",
+        "init",
+        "--output",
+        "<PRIVATE_CHECK_DIR>/study"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "command": [
+        "study",
+        "check",
+        "--directory",
+        "<PRIVATE_CHECK_DIR>/study"
+      ],
+      "exit_code": 3,
+      "expected_exit_code": 3
+    },
+    {
+      "command": [
+        "evaluate",
+        "--output",
+        "<PRIVATE_CHECK_DIR>/evaluation"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "command": [
+        "pilot",
+        "--output",
+        "<PRIVATE_CHECK_DIR>/pilot"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    }
+  ],
+  "byte_identical_frozen_outputs": [
+    "evaluation/contexts.json",
+    "evaluation/diagnostics.json",
+    "evaluation/manifest.json",
+    "evaluation/pairs.json",
+    "evaluation/REPORT.md",
+    "evaluation/results.csv",
+    "evaluation/results.json",
+    "evaluation/summary.json",
+    "pilot/analysis.json",
+    "pilot/pilot_items.json",
+    "pilot/REPORT.md",
+    "pilot/synthetic.csv"
+  ],
+  "human_observations": 0,
+  "learning_protocol_bundled_in_wheel": true
+}

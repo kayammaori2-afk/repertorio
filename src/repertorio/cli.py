@@ -13,10 +13,12 @@ import json
 import os
 import re
 import secrets
+import stat
 import subprocess
 import sys
 import tempfile
 import uuid
+from contextlib import contextmanager
 from pathlib import Path, PureWindowsPath
 from typing import Any
 
@@ -85,7 +87,16 @@ def restrict_file(path: Path) -> None:
 
 def write_private(path: Path, content: str, *, replace: bool = False) -> None:
     """Write privately, refuse accidental overwrite, atomically replace on request."""
-    path = path.resolve()
+    path = Path(os.path.abspath(path))
+    try:
+        metadata = path.lstat()
+    except FileNotFoundError:
+        metadata = None
+    if metadata and (
+        stat.S_ISLNK(metadata.st_mode)
+        or getattr(metadata, "st_file_attributes", 0) & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)
+    ):
+        raise ValueError("Private output must not be a symlink or reparse point.")
     path.parent.mkdir(parents=True, exist_ok=True)
     flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
     target = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp") if replace else path
@@ -106,7 +117,50 @@ def write_private(path: Path, content: str, *, replace: bool = False) -> None:
         raise
 
 
+@contextmanager
+def credential_lock(credentials_file: Path):
+    """Serialize cooperating CLI writers. Fail closed; never guess a stale lock."""
+    credentials_file = Path(os.path.abspath(credentials_file))
+    lock = credentials_file.with_name(credentials_file.name + ".lock")
+    lock.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        descriptor = os.open(lock, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    except FileExistsError:
+        raise ValueError(
+            "Credential registry is locked. Retry after the other update; a crash lock needs operator inspection."
+        ) from None
+    try:
+        os.close(descriptor)
+        restrict_file(lock)
+        yield
+    finally:
+        lock.unlink(missing_ok=True)
+
+
 def initialize_token(
+    credentials_file: Path, token_file: Path, profile: str, scopes: list[str]
+) -> dict[str, Any]:
+    with credential_lock(credentials_file):
+        return _initialize_token_locked(credentials_file, token_file, profile, scopes)
+
+
+def revoke_token(credentials_file: Path, credential_id: str) -> dict[str, Any]:
+    if not re.fullmatch(r"[a-f0-9]{32}", credential_id):
+        raise ValueError("Use the credential_id returned by init-token.")
+    with credential_lock(credentials_file):
+        records = CredentialRegistry(credentials_file).read()
+        remaining = [record for record in records if record["id"] != credential_id]
+        if len(remaining) == len(records):
+            raise ValueError("Credential ID was not found; no change made.")
+        write_private(
+            credentials_file,
+            json.dumps({"version": 1, "credentials": remaining}, indent=2) + "\n",
+            replace=True,
+        )
+    return {"revoked_credential_id": credential_id, "effective": "next request", "token_file_removed": False}
+
+
+def _initialize_token_locked(
     credentials_file: Path, token_file: Path, profile: str, scopes: list[str]
 ) -> dict[str, Any]:
     validate_profile(profile)
@@ -143,7 +197,7 @@ def initialize_token(
         "token_file": str(token_file.resolve()),
         "profile": profile,
         "scopes": sorted(set(scopes)),
-        "rotation": "Create another token file, update the authorized client, then remove the old credential ID from the registry. Revocation applies on the next request.",
+        "rotation": "Create another token file, update the authorized client, then use revoke-token with the old credential ID. Do not edit a live registry manually. Revocation applies on the next request.",
     }
 
 
@@ -313,7 +367,39 @@ def parser() -> argparse.ArgumentParser:
     token.add_argument("--credentials-file", type=Path, required=True)
     token.add_argument("--token-file", type=Path, required=True)
     token.add_argument("--scopes", nargs="+", choices=sorted(SCOPES), default=["read", "write"])
+    revoke = commands.add_parser(
+        "revoke-token", help="Revoke one credential under the same registry lock as init-token."
+    )
+    revoke.add_argument("--credentials-file", type=Path, required=True)
+    revoke.add_argument("--credential-id", required=True)
     commands.add_parser("doctor", help="Check SQLite access and installed dependency versions.")
+    setup = commands.add_parser(
+        "setup", help="Create ready-to-copy host snippets in a new directory; never overwrite host settings."
+    )
+    setup.add_argument("--output", type=Path, required=True)
+    experiment = commands.add_parser(
+        "experiment", help="Prepare, freeze, blind and analyze tutor comparisons; never calls a model."
+    )
+    experiment_commands = experiment.add_subparsers(dest="experiment_command", required=True)
+    preparation = experiment_commands.add_parser("prepare")
+    preparation.add_argument("--output", type=Path, required=True)
+    preparation.add_argument("--cases", type=Path)
+    for name in ("freeze", "blind", "analyze"):
+        stage = experiment_commands.add_parser(name)
+        stage.add_argument("--directory", type=Path, required=True)
+        if name == "blind":
+            stage.add_argument("--output", type=Path, required=True)
+        if name == "analyze":
+            stage.add_argument("--ratings", type=Path, required=True)
+            stage.add_argument("--packet", type=Path, required=True)
+            stage.add_argument("--output", type=Path, required=True)
+    study = commands.add_parser("study", help="Prepare an empty adult pilot kit and check readiness.")
+    study_commands = study.add_subparsers(dest="study_command", required=True)
+    initialization = study_commands.add_parser("init")
+    initialization.add_argument("--output", type=Path, required=True)
+    for name in ("check", "consent", "freeze", "analyze-usability"):
+        stage = study_commands.add_parser(name)
+        stage.add_argument("--directory", type=Path, required=True)
     demo = commands.add_parser(
         "demo", help="Run a synthetic MCP demonstration in a temporary database unless --db is provided."
     )
@@ -368,6 +454,39 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "init-token":
             output = initialize_token(args.credentials_file, args.token_file, args.profile, args.scopes)
+        elif args.command == "revoke-token":
+            output = revoke_token(args.credentials_file, args.credential_id)
+        elif args.command == "setup":
+            from repertorio.setup import setup
+
+            output = setup(args.output, args.db, args.profile)
+        elif args.command == "experiment":
+            from repertorio import experiment
+
+            if args.experiment_command == "prepare":
+                output = experiment.prepare(args.output, args.cases)
+            elif args.experiment_command == "freeze":
+                output = experiment.freeze(args.directory)
+            elif args.experiment_command == "blind":
+                output = experiment.blind(args.directory, args.output)
+            else:
+                output = experiment.analyze(args.directory, args.ratings, args.packet)
+                experiment.write_json(args.output, output)
+        elif args.command == "study":
+            from repertorio import study
+
+            if args.study_command == "init":
+                output = study.initialize(args.output)
+            elif args.study_command == "consent":
+                output = study.render_consent(args.directory)
+            elif args.study_command == "check":
+                output = study.check(args.directory)
+                print(json.dumps(output, ensure_ascii=False, indent=2))
+                return 0 if output["ready_by_operator_declarations"] else 3
+            elif args.study_command == "freeze":
+                output = study.freeze(args.directory)
+            else:
+                output = study.analyze_usability(args.directory)
         elif args.command == "demo":
             if args.output and (args.output.exists() or args.output.is_symlink()):
                 raise ValueError(
@@ -407,7 +526,7 @@ def main(argv: list[str] | None = None) -> int:
                 profile = store.get_profile()
                 output = {
                     "ok": True,
-                    "version": "0.1.0",
+                    "version": "0.2.0",
                     "python": sys.version.split()[0],
                     "mcp_sdk": importlib.metadata.version("mcp"),
                     "database": str(args.db.resolve()),

@@ -1,0 +1,5 @@
+**Closed — basic structural consent completeness.** Required consent fields must be populated, all are rendered into the document, and `check()` rejects text that differs from the current fields (`study.py:157–178, 206–213`). Rendering also rejects an existing freeze (`185–186`).
+
+**Concrete blockers:** None identified in the supplied changes. No material correctness regression apparent within this scope.
+
+**Limits:** Static review only; tests were not run. Supplied tests cover arbitrary text, successful rendering and stale fields, but do not directly exercise rendering after freeze. CLI wiring and `write_private` were not supplied. Free-text substance, human review, ethical approval and actual participant consent remain unverified; this closure establishes required-field presence and document consistency only.

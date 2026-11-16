@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "stage": "candidate_not_released",
+  "installed_package_tests": "164 passed, 3 skipped in 37.01s",
+  "package_sha256": {
+    "repertorio_mcp-0.2.0-py3-none-any.whl": "7677990889fc5aab150355083a03b75526cba889d5a8f67297b414fce9bbbc98",
+    "repertorio_mcp-0.2.0.tar.gz": "dfa850e12c71c6a7886320d384fb0a60c501c086d73201a7d5c12ff751ec1fdc"
+  },
+  "pilot_human_rows": 0,
+  "experiment_responses": 0,
+  "review": "Independent same-family static review; other-family unavailable due subscription limit",
+  "public_stable_release": "v0.1.0"
+}

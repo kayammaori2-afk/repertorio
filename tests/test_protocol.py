@@ -167,7 +167,7 @@ async def test_continuity_real_stdio_http_restart_isolation(tmp_path, credential
     registry, tokens = credentials
     async with stdio_session(db) as session:
         listed = await session.list_tools()
-        assert len(listed.tools) == 9
+        assert len(listed.tools) == 10
         tools = {tool.name: tool for tool in listed.tools}
         assert tools["get_profile"].annotations.readOnlyHint
         assert tools["confirm_delete"].annotations.destructiveHint
@@ -222,6 +222,12 @@ async def test_continuity_real_stdio_http_restart_isolation(tmp_path, credential
             resumed = await call(session, "get_profile")
             assert resumed["repertoire"][0] == saved
             assert len(resumed["evidence"]) == len(resumed["sessions"]) == 1
+            options = await call(session, "learning_options", {"topic": "custo de oportunidade"})
+            assert options["state"] == "ready" and options["saved_item_count"] == 1
+            assert sample_item()["title"] not in json.dumps(options)
+            assert (await call(session, "prepare_context", {"concept": "Custo de oportunidade"}))[
+                "references"
+            ]
             corrected = await call(
                 session,
                 "save_item",
@@ -238,6 +244,8 @@ async def test_continuity_real_stdio_http_restart_isolation(tmp_path, credential
             exported = await call(session, "export_profile")
         async with http_session(url, tokens["bob"]) as session:
             assert not (await call(session, "get_profile"))["repertoire"]
+            options = await call(session, "learning_options", {"topic": "custo de oportunidade"})
+            assert options["saved_item_count"] == 0 and options["state"] == "needs_context"
             await call(
                 session,
                 "save_item",
@@ -515,7 +523,7 @@ def test_stdio_stdout_is_protocol_only_and_bounded(tmp_path):
         process.stdin.write('{"jsonrpc":"2.0","method":"notifications/initialized"}\n')
         process.stdin.write('{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}\n')
         process.stdin.flush()
-        assert len(json.loads(process.stdout.readline())["result"]["tools"]) == 9
+        assert len(json.loads(process.stdout.readline())["result"]["tools"]) == 10
         process.stdin.close()
         process.wait(timeout=10)
         assert process.stdout.read() == ""

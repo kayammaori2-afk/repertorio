@@ -8,6 +8,8 @@ Repertorio is a local MCP server that gives an assistant access to your repertoi
 
 No separate chat interface. No LLM API key, embedding service or cloud account required by the server. Your chosen assistant has its own access requirements.
 
+**v0.2.0 candidate:** easier first use, prospective tutor evaluation and an empty adult pilot kit. [Changes and limits](docs/v0.2.0.md). Published stable: v0.1.0. New commands below require this candidate's source/package.
+
 ## See the behavior
 
 The included demo uses real MCP subprocesses and a synthetic profile:
@@ -30,6 +32,7 @@ Install [Python 3.13](https://www.python.org/downloads/) and [uv](https://docs.a
 ```sh
 git clone https://github.com/kayammaori2-afk/repertorio.git
 cd repertorio
+git switch feature/v0.2.0-pilot-ready
 uv sync --locked
 uv run repertorio doctor
 uv run repertorio demo
@@ -47,9 +50,9 @@ For a package-only installation, download the wheel from the [release](https://g
 
 ## Connect an assistant
 
-1. Run `uv run python -c "import sys; print(sys.executable)"` to find your Python executable.
-2. Use its **absolute path** as the MCP command, with the arguments below. Choose an absolute private database path.
-3. Copy the [session instruction](docs/tutor-instructions.pt-BR.md) into your assistant's instructions or conversation. Keep the host's tool approvals enabled.
+1. Run `uv run repertorio --profile student setup --output host-setup` to generate correct paths. Supply `--db` before `setup` to choose another private database.
+2. Read `host-setup/START-HERE.txt` and merge **only the repertorio entry** into your host configuration. Existing files are never changed by setup. Reconnect the MCP server.
+3. Ask: “Help me start with Repertorio. Show the available topics without assuming what I know.” The assistant calls `learning_options`. Keep host tool approvals enabled. [Session instruction](docs/tutor-instructions.pt-BR.md).
 
 ```text
 -m repertorio --db ABSOLUTE_PRIVATE_DATABASE_PATH --profile student serve
@@ -65,7 +68,7 @@ Replace the placeholders. Windows uses `.venv/Scripts/python.exe`; Linux/macOS u
 
 Try this request after connecting:
 
-> Register that I understand shopping budgets, prices and alternatives. Use `everyday:shopping`, confirm my familiarity, then help me understand `opportunity_cost` with an example and its limitation.
+> Quero estudar custo de oportunidade. Mostre como começar com Repertorio. Posso escolher explicar diretamente sem cadastrar repertório.
 
 The initial catalog contains **16 original mappings across four concept IDs**: `opportunity_cost`, `marginal_analysis`, `conditional_probability` and `independence`. It uses explicit repertoire IDs and confirmed elements. Adding an arbitrary film or book does not automatically create a reviewed pedagogical mapping. Unsupported concepts or unsuitable references return a fallback so the assistant can continue teaching directly.
 
@@ -73,6 +76,7 @@ The initial catalog contains **16 original mappings across four concept IDs**: `
 
 | Need | Tool |
 |---|---|
+| Start/resume; discover topics and confirmed context | `learning_options` |
 | Read current records and provenance | `get_profile` |
 | Register or correct familiarity, progress and preferences | `save_item` |
 | Get eligible mappings, reasons, limitations and fallback | `prepare_context` |
@@ -91,7 +95,7 @@ uv run repertorio --profile student init-token --credentials-file PRIVATE_DIR/cr
 uv run repertorio serve --transport http --credentials-file PRIVATE_DIR/credentials.json --host 127.0.0.1 --port 8765
 ```
 
-The endpoint is `http://127.0.0.1:8765/mcp`. Configure a trusted client to read the token file and send a Bearer header. Keep tokens out of prompts, shell arguments and source control. The server reloads its hashed registry on each request; remove an old credential entry to revoke it. Profile and scopes come from the credential, never the model's arguments. [Transport details and ChatGPT's separate remote requirements](docs/compatibility.md).
+The endpoint is `http://127.0.0.1:8765/mcp`. Configure a trusted client to read the token file and send a Bearer header. Keep tokens out of prompts, shell arguments and source control. Revoke with `repertorio revoke-token --credentials-file PRIVATE_DIR/credentials.json --credential-id ID_FROM_INIT`; the server reloads the registry on the next request. `init-token` and `revoke-token` share an exclusive lock; retry a busy operation and never edit the live registry manually. Profile/scopes come from the credential, never model arguments. [Transport details](docs/compatibility.md).
 
 Choose a private directory outside the checkout for `PRIVATE_DIR`. Export a logical backup or a readable snapshot for an assistant without MCP:
 

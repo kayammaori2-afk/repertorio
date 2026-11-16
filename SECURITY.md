@@ -1,5 +1,7 @@
 # Security scope
 
+In v0.2, use `init-token` and `revoke-token` for coordinated registry updates. A `.lock` file serializes these writers; a busy operation fails before changing credentials. After a crash, confirm no writer is running before removing a stale lock. Manual edits do not participate in this lock and must not run concurrently. Revoking the final credential leaves a valid empty deny-all registry; the old token file is not automatically removed. Private output rejects final-component symlinks/reparse points. Ancestor directories must still be trusted; these CLI helpers do not defend against a malicious same-user process replacing parent directories.
+
 This release is for a trusted local operator. The HTTP service binds to loopback and authenticates each protected request. Credentials are local secrets and are excluded from source archives. Host and Origin validation addresses cross-origin requests and DNS rebinding. The server validates identity, scopes, payload bounds and record revisions independently of MCP annotations.
 
 The database contains educational information. Another process with the same filesystem access can read it. OS account permissions and device encryption belong to the operator's environment. Prefer a private OS data directory and minimize stored answer summaries. No external telemetry is sent by the Repertorio server. The assistant provider may receive the context returned to its host. Check the provider's data controls before using real personal data.

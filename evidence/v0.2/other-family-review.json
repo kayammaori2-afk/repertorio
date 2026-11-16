@@ -1,0 +1,7 @@
+{
+  "attempted": "Claude Code subscription read-only review",
+  "status": "not_performed",
+  "error": "usage_limit_reached",
+  "api_error_status": 429,
+  "limit": "No other-family review of v0.2 was obtained. Earlier v0.1 reviews do not cover this change."
+}

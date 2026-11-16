@@ -1,5 +1,15 @@
 # Local verification record
 
+## v0.2 candidate addendum — 2026-11-16
+
+The v0.2 local gate passed **164 tests, with 3 symlink-creation tests skipped on Windows**, plus lint/types, the unchanged selector evaluation and artificial pilot analysis. Skips are not passes; Linux must exercise those paths. Four sanitized Codex traces retain refusal to register, the initial missing-status failure, corrected fresh-profile flow and later familiarity-only correction. These are scripted synthetic interactions, not user-study outcomes. `evidence/v0.2/host-codex.json` records exact calls and replies.
+
+The wheel built from sdist installed outside the checkout and passed doctor, demo, setup, experiment preparation, study initialization and expected blocked readiness. Eight deterministic selector outputs and four artificial-pilot outputs matched previous results byte-for-byte. The kit contains the complete learning protocol even without a source checkout. `evidence/v0.2/clean-install.json` records checks. Frozen v0.1 inputs were not retuned.
+
+An independent Codex/Astra static snapshot review prompted repairs to research integrity, prospective rubric freezing, empty consent handling, symlink destinations, credential serialization, Unicode TOML and collection size. This is a separate reviewer, **of the same model family**. Claude review returned usage_limit_reached; no other-family review is claimed for v0.2. Reports/limitations are in `evidence/v0.2/`. No independent human annotation, expert pedagogical review, recruitment or learning benefit was observed. Earlier v0.1 review/CI evidence below must not be attributed to v0.2.
+
+## Historical v0.1 local record
+
 This document records the initial local verification, before public release. See [publication.md](publication.md) for the authorized MIT publication and release-specific checks. The project is not a hosted service or certified educational intervention. All records used in checks are synthetic. No participants were recruited. The observed environment is Windows, Python 3.13.5, uv 0.13.8 and the dependency versions in uv.lock. The acceptance command is `uv run python scripts/verify.py`; its exit status covers lint, type checks, tests, offline evaluation and the artificial pilot analysis. Packaging, host checks and external advisory lookup have separate evidence below.
 
 Final local result: **131 tests passed**, with lint and type checks passing. A new environment outside the source tree loaded the installed wheel, ran doctor/demo/evaluation/pilot successfully, matched the locked runtime dependency versions, and reproduced eight evaluation artifacts plus four pilot artifacts byte-for-byte. Dependency advisories reported no known vulnerabilities in the checked third-party packages. Artifact and source hashes are recorded in the evidence files; the source archive has an external release manifest with its Git commit.

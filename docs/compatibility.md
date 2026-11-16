@@ -1,5 +1,7 @@
 # Observed compatibility
 
+For v0.2, `repertorio setup --output host-setup` generates snippets with the current interpreter/database; merge only the `repertorio` entry. The new first-use flow was observed in actual Codex conversations, including skip, confirmed registration and correction (`evidence/v0.2/host-codex.json`). Claude's new v0.2 flow could not be retested because its subscription limit was reached. Earlier two-host evidence below applies to v0.1. No new VS Code or remote ChatGPT execution is claimed.
+
 Observed on Windows with Python 3.13.5 during the 2026-11-16 local execution. The installed official Python SDK is 1.30.0 and the observed handshake selected MCP 2025-11-25. Version 2026-07-28 on the current specification site has different lifecycle semantics. This package claims the protocol observed with its pinned SDK.
 
 | Client/surface | Transport | Observed operations | Status |
