@@ -1,0 +1,8 @@
+{
+  "python": "3.11.18",
+  "installation": "built package installed in an environment outside the checkout",
+  "result": "175 passed, 3 skipped in 53.15s",
+  "skip_reason": "Local Windows symlink-creation privilege",
+  "data": "synthetic test fixtures",
+  "scope": "final reviewed runtime code; no Python 3.12 execution claimed"
+}

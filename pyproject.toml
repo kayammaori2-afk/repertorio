@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "repertorio-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "Portable pedagogical context for the AI assistant you already use"
 readme = "README.md"
 license = "MIT"
@@ -26,6 +26,9 @@ dev = ["pytest>=8,<10", "pytest-asyncio>=1,<2", "ruff>=0.12,<1", "mypy>=1.15,<2"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/repertorio"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"docs/pilot.md" = "repertorio/data/pilot-protocol.md"
 
 [tool.hatch.build.targets.sdist]
 include = ["src", "tests", "docs", "examples", "scripts", "README.md", "pyproject.toml", "uv.lock", "CONTRIBUTING.md", "SECURITY.md", "CITATION.cff", "CHANGELOG.md", ".github", ".gitattributes", ".gitignore", "LICENSE", "LICENSE-DECISION.md", "CONTRACT.md", "WORK_STATE.md"]

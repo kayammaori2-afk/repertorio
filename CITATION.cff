@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you discuss this software, identify the version and commit used."
 title: "Repertorio"
 type: software
-version: 0.1.0
+version: 0.2.0
 license: MIT
 repository-code: "https://github.com/kayammaori2-afk/repertorio"
 url: "https://github.com/kayammaori2-afk/repertorio"

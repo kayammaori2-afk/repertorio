@@ -1,0 +1,59 @@
+{
+  "utc": "2026-11-16T23:02:30.798430+00:00",
+  "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]",
+  "checks": [
+    {
+      "check": "lint",
+      "command": [
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "log": "lint.log"
+    },
+    {
+      "check": "types",
+      "command": [
+        "mypy",
+        "src/repertorio"
+      ],
+      "exit_code": 0,
+      "log": "types.log"
+    },
+    {
+      "check": "tests",
+      "command": [
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log": "tests.log"
+    },
+    {
+      "check": "evaluation",
+      "command": [
+        "repertorio",
+        "evaluate",
+        "--output",
+        "evidence/evaluation"
+      ],
+      "exit_code": 0,
+      "log": "evaluation.log"
+    },
+    {
+      "check": "pilot",
+      "command": [
+        "repertorio",
+        "pilot",
+        "--output",
+        "evidence/pilot"
+      ],
+      "exit_code": 0,
+      "log": "pilot.log"
+    }
+  ],
+  "passed": true
+}

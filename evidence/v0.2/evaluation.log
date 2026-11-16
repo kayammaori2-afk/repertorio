@@ -1,0 +1,266 @@
+{
+  "dataset_version": "synthetic-cases-v1-audit2",
+  "case_count": 31,
+  "evidence_level": "internal_synthetic_selector_only",
+  "arms": {
+    "A": {
+      "cases": 31,
+      "ranking_denominator": 0,
+      "mean_ndcg_at_3": null,
+      "mean_positive_recall": null,
+      "cases_with_context": 0,
+      "correct_abstentions": null,
+      "unwarranted_abstentions": null,
+      "constraint_violations": 0,
+      "mean_context_bytes": 1046.52,
+      "max_context_bytes": 1078
+    },
+    "B": {
+      "cases": 31,
+      "ranking_denominator": 25,
+      "mean_ndcg_at_3": 0.82745986,
+      "mean_positive_recall": 0.77666667,
+      "cases_with_context": 25,
+      "correct_abstentions": 6,
+      "unwarranted_abstentions": 0,
+      "constraint_violations": 0,
+      "mean_context_bytes": 3012.77,
+      "max_context_bytes": 4053
+    },
+    "C": {
+      "cases": 31,
+      "ranking_denominator": 25,
+      "mean_ndcg_at_3": 0.87419515,
+      "mean_positive_recall": 0.87,
+      "cases_with_context": 25,
+      "correct_abstentions": 6,
+      "unwarranted_abstentions": 0,
+      "constraint_violations": 0,
+      "mean_context_bytes": 3691.45,
+      "max_context_bytes": 4474
+    },
+    "D": {
+      "cases": 31,
+      "ranking_denominator": 25,
+      "mean_ndcg_at_3": 0.75540584,
+      "mean_positive_recall": 0.85,
+      "cases_with_context": 25,
+      "correct_abstentions": 6,
+      "unwarranted_abstentions": 0,
+      "constraint_violations": 0,
+      "mean_context_bytes": 3231.61,
+      "max_context_bytes": 3908
+    }
+  },
+  "paired_denominator": 25,
+  "mean_C_minus_B": 0.04673529,
+  "mean_C_minus_D": 0.11878931,
+  "B_wins": [
+    "opportunity_cost-baseline-strength",
+    "marginal_analysis-baseline-strength",
+    "conditional_probability-general",
+    "conditional_probability-baseline-strength",
+    "conditional_probability-excluded",
+    "conditional_probability-unknown",
+    "conditional_probability-corrected",
+    "conditional_probability-superficial",
+    "independence-baseline-strength"
+  ],
+  "D_wins": [
+    "marginal_analysis-baseline-strength",
+    "conditional_probability-general",
+    "conditional_probability-excluded",
+    "conditional_probability-unknown",
+    "conditional_probability-corrected"
+  ],
+  "slices": {
+    "split": {
+      "development": {
+        "denominator": 13,
+        "mean_C_minus_B": 0.13631474,
+        "mean_C_minus_D": 0.21860281
+      },
+      "test": {
+        "denominator": 12,
+        "mean_C_minus_B": -0.05030911,
+        "mean_C_minus_D": 0.01065801
+      }
+    },
+    "scenario": {
+      "baseline_strength": {
+        "denominator": 4,
+        "mean_C_minus_B": -0.53806885,
+        "mean_C_minus_D": 0.0
+      },
+      "corrected_familiarity": {
+        "denominator": 4,
+        "mean_C_minus_B": 0.19353057,
+        "mean_C_minus_D": 0.15174078
+      },
+      "exclusion": {
+        "denominator": 4,
+        "mean_C_minus_B": 0.13030754,
+        "mean_C_minus_D": -0.01416086
+      },
+      "general": {
+        "denominator": 4,
+        "mean_C_minus_B": 0.19353057,
+        "mean_C_minus_D": 0.15174078
+      },
+      "progress_allowed": {
+        "denominator": 1,
+        "mean_C_minus_B": 0.0,
+        "mean_C_minus_D": 0.0
+      },
+      "superficial_tags": {
+        "denominator": 4,
+        "mean_C_minus_B": 0.18248821,
+        "mean_C_minus_D": 0.46727335
+      },
+      "unknown_familiarity": {
+        "denominator": 4,
+        "mean_C_minus_B": 0.13030754,
+        "mean_C_minus_D": -0.01416086
+      }
+    },
+    "group_id": {
+      "conditional_probability": {
+        "denominator": 6,
+        "mean_C_minus_B": -0.16901134,
+        "mean_C_minus_D": -0.04243082
+      },
+      "independence": {
+        "denominator": 6,
+        "mean_C_minus_B": -0.04734435,
+        "mean_C_minus_D": 0.18652869
+      },
+      "marginal_analysis": {
+        "denominator": 6,
+        "mean_C_minus_B": 0.06839312,
+        "mean_C_minus_D": 0.06374684
+      },
+      "opportunity_cost": {
+        "denominator": 7,
+        "mean_C_minus_B": 0.29373681,
+        "mean_C_minus_D": 0.24609492
+      }
+    }
+  },
+  "report_version": "post-followup-v3",
+  "equal_concept_group_mean_C_minus_B": 0.03644356,
+  "limits": "Same agent authored catalog, cases and labels. No human or LLM efficacy evidence. Concept groups contain dependent variants. No statistical population inference or confidence interval.",
+  "diagnostics": {
+    "status": "post_result_diagnostic_not_preregistered_not_independent_validation",
+    "random_tie_repetitions": 200,
+    "random_tie_seed": 20261116,
+    "description": "Only tie orders are randomized independently of grades; original affinities and score/labels are unchanged. Means are Monte Carlo sensitivity diagnostics, not replacement confirmatory results or independent labels.",
+    "ranked_cases": 25,
+    "distinct_objective_eligible_grade_setups": 13,
+    "fit_grade_spearman_mean": 0.39029195,
+    "correlation_denominator": 24,
+    "fit_equals_grade_count": 5,
+    "cuts": {
+      "split": {
+        "development": {
+          "cases": 13,
+          "correlation_denominator": 12,
+          "fit_grade_spearman_mean": 0.64029195,
+          "fit_equals_grade_count": 5,
+          "fixed_order_mean_C_minus_B": 0.13631474,
+          "B_random_tie_mean_ndcg": 0.68905678,
+          "C_random_tie_mean_ndcg": 0.88265399,
+          "D_random_tie_mean_ndcg": 0.70037417,
+          "random_tie_mean_C_minus_B": 0.19359721
+        },
+        "test": {
+          "cases": 12,
+          "correlation_denominator": 12,
+          "fit_grade_spearman_mean": 0.14029195,
+          "fit_equals_grade_count": 0,
+          "fixed_order_mean_C_minus_B": -0.05030911,
+          "B_random_tie_mean_ndcg": 0.68529562,
+          "C_random_tie_mean_ndcg": 0.83669799,
+          "D_random_tie_mean_ndcg": 0.72001065,
+          "random_tie_mean_C_minus_B": 0.15140236
+        }
+      },
+      "fit_scenario": {
+        "baseline_strength": {
+          "cases": 4,
+          "correlation_denominator": 4,
+          "fit_grade_spearman_mean": -0.40824829,
+          "fit_equals_grade_count": 0,
+          "fixed_order_mean_C_minus_B": -0.53806885,
+          "B_random_tie_mean_ndcg": 0.97669472,
+          "C_random_tie_mean_ndcg": 0.47191948,
+          "D_random_tie_mean_ndcg": 0.64112631,
+          "random_tie_mean_C_minus_B": -0.50477525
+        },
+        "other": {
+          "cases": 21,
+          "correlation_denominator": 20,
+          "fit_grade_spearman_mean": 0.55,
+          "fit_equals_grade_count": 5,
+          "fixed_order_mean_C_minus_B": 0.15812656,
+          "B_random_tie_mean_ndcg": 0.63211937,
+          "C_random_tie_mean_ndcg": 0.93462856,
+          "D_random_tie_mean_ndcg": 0.72288033,
+          "random_tie_mean_C_minus_B": 0.3025092
+        }
+      },
+      "concept": {
+        "conditional_probability": {
+          "cases": 6,
+          "correlation_denominator": 6,
+          "fit_grade_spearman_mean": -0.16666667,
+          "fit_equals_grade_count": 0,
+          "fixed_order_mean_C_minus_B": -0.16901134,
+          "B_random_tie_mean_ndcg": 0.68496944,
+          "C_random_tie_mean_ndcg": 0.79861344,
+          "D_random_tie_mean_ndcg": 0.71128434,
+          "random_tie_mean_C_minus_B": 0.113644
+        },
+        "independence": {
+          "cases": 6,
+          "correlation_denominator": 6,
+          "fit_grade_spearman_mean": 0.44725057,
+          "fit_equals_grade_count": 0,
+          "fixed_order_mean_C_minus_B": -0.04734435,
+          "B_random_tie_mean_ndcg": 0.61143195,
+          "C_random_tie_mean_ndcg": 0.79830691,
+          "D_random_tie_mean_ndcg": 0.58528409,
+          "random_tie_mean_C_minus_B": 0.18687496
+        },
+        "marginal_analysis": {
+          "cases": 6,
+          "correlation_denominator": 6,
+          "fit_grade_spearman_mean": 0.44725057,
+          "fit_equals_grade_count": 0,
+          "fixed_order_mean_C_minus_B": 0.06839312,
+          "B_random_tie_mean_ndcg": 0.68562181,
+          "C_random_tie_mean_ndcg": 0.87478253,
+          "D_random_tie_mean_ndcg": 0.72873697,
+          "random_tie_mean_C_minus_B": 0.18916073
+        },
+        "opportunity_cost": {
+          "cases": 7,
+          "correlation_denominator": 6,
+          "fit_grade_spearman_mean": 0.83333333,
+          "fit_equals_grade_count": 5,
+          "fixed_order_mean_C_minus_B": 0.29373681,
+          "B_random_tie_mean_ndcg": 0.75559235,
+          "C_random_tie_mean_ndcg": 0.95495149,
+          "D_random_tie_mean_ndcg": 0.79902281,
+          "random_tie_mean_C_minus_B": 0.19935914
+        }
+      }
+    },
+    "B_all_affinities_tied_cases": 21,
+    "D_all_tag_scores_tied_cases": 17,
+    "D_all_tag_scores_zero_cases": 16,
+    "B_random_tie_mean_ndcg": 0.68725142,
+    "C_random_tie_mean_ndcg": 0.86059511,
+    "D_random_tie_mean_ndcg": 0.70979968,
+    "documented_prior_use_in_benchmark": 0
+  }
+}

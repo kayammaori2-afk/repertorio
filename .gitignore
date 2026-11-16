@@ -18,3 +18,6 @@ context.txt
 credentials.json
 bearer.txt
 demo-transcript.json
+private-study/
+private-experiment/
+host-setup/

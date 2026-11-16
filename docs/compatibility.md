@@ -1,5 +1,7 @@
 # Observed compatibility
 
+For v0.2, `repertorio setup --output host-setup` generates snippets with the current interpreter/database; merge only the `repertorio` entry. The new first-use flow was observed in actual Codex conversations, including skip, confirmed registration and correction (`evidence/v0.2/host-codex.json`). After the subscription reset, actual Claude Code 2.1.311/Opus 5.5 conversations used the generated configuration and exercised three fresh conversation phases: skip without records, confirmed shopping registration with eligible context, and a familiarity-only correction followed by fallback. Ten actual tool calls and persisted state checks are in `evidence/v0.2/host-claude.json`. These are scripted synthetic interactions, distinct from the static Claude review. Earlier cross-host continuity evidence below applies to v0.1. No new VS Code or remote ChatGPT execution is claimed.
+
 Observed on Windows with Python 3.13.5 during the 2026-11-16 local execution. The installed official Python SDK is 1.30.0 and the observed handshake selected MCP 2025-11-25. Version 2026-07-28 on the current specification site has different lifecycle semantics. This package claims the protocol observed with its pinned SDK.
 
 | Client/surface | Transport | Observed operations | Status |

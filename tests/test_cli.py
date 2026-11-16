@@ -152,6 +152,42 @@ def test_token_creation_requires_read_scope(tmp_path, capsys):
     assert not registry.exists() and not token.exists()
 
 
+def test_registry_mutations_share_lock_and_do_not_restore_revoked_credentials(tmp_path):
+    from repertorio.cli import credential_lock, initialize_token, revoke_token
+
+    registry = tmp_path / "credentials.json"
+    first = initialize_token(registry, tmp_path / "one.token", "alice", ["read"])
+    with credential_lock(registry):
+        with pytest.raises(ValueError, match="locked"):
+            initialize_token(registry, tmp_path / "two.token", "bob", ["read"])
+        with pytest.raises(ValueError, match="locked"):
+            revoke_token(registry, first["credential_id"])
+    assert not (tmp_path / "two.token").exists()
+    revoke_token(registry, first["credential_id"])
+    from repertorio.server import CredentialRegistry
+
+    assert (
+        CredentialRegistry(registry).verify("Bearer " + (tmp_path / "one.token").read_text().strip()) is None
+    )
+    second = initialize_token(registry, tmp_path / "two.token", "bob", ["read"])
+    assert [row["id"] for row in json.loads(registry.read_text())["credentials"]] == [second["credential_id"]]
+    assert not registry.with_name("credentials.json.lock").exists()
+
+
+@pytest.mark.parametrize("replace", [False, True])
+def test_private_output_rejects_dangling_final_symlink(tmp_path, replace):
+    from repertorio.cli import write_private
+
+    link, destination = tmp_path / "link.txt", tmp_path / "unintended.txt"
+    try:
+        link.symlink_to(destination)
+    except OSError:
+        pytest.skip("Host does not allow creating symlinks; exercised on Linux CI")
+    with pytest.raises(ValueError, match="symlink"):
+        write_private(link, "must not be written", replace=replace)
+    assert not destination.exists() and link.is_symlink()
+
+
 async def test_demo_real_mcp_persistence(tmp_path):
     result = await run_demo(tmp_path / "demo.sqlite3", "demo-profile")
     assert result["real_subprocesses"] == 2
