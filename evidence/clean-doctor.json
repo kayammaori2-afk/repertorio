@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "python": "3.13.5",
   "mcp_sdk": "1.30.0",
-  "database": "<workspace>\\work\\release-check-jui2ah0e\\clean.sqlite3",
+  "database": "<workspace>\\work\\release-check-dnrjnd0k\\clean.sqlite3",
   "profile": "synthetic",
   "schema_version": 1,
   "repertoire_count": 0,

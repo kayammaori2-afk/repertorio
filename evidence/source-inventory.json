@@ -2,7 +2,7 @@
   "scope": "current non-ignored publishing files including evidence, and all reachable Git blobs",
   "manifest_scope": "source files excluding generated evidence to avoid self-referential hashes",
   "limitations": "Pattern scan detects common credentials only; manual review is also required.",
-  "history_blobs_scanned": 111,
+  "history_blobs_scanned": 150,
   "issues": [],
   "files": [
     {
@@ -72,8 +72,8 @@
     },
     {
       "path": "WORK_STATE.md",
-      "sha256": "8968a14759159b9faecb4731ef34e016fd6e254544a401cdeae27964816041ec",
-      "bytes": 3444
+      "sha256": "5b3cc87961ddb4d825bbe6429ca2aad7ad970328bcad06bbd4c4a76810714722",
+      "bytes": 3383
     },
     {
       "path": "docs/architecture.md",
@@ -82,8 +82,8 @@
     },
     {
       "path": "docs/compatibility.md",
-      "sha256": "7a0304233619e8f931fd972a681a7754eb4f1686e920dc95bfd83de5d45c1b0e",
-      "bytes": 4596
+      "sha256": "3d14cd98921a0495282af10af3e76eefd9ef8fbc0237f98884d413edea0430bf",
+      "bytes": 5156
     },
     {
       "path": "docs/contribution.md",
@@ -107,8 +107,8 @@
     },
     {
       "path": "docs/publication.md",
-      "sha256": "64242cb45a39237143e7bdcbe433c82505af034d1735e6f1201fb0fafe217992",
-      "bytes": 2132
+      "sha256": "44bd8c7bff2c55ce1cfc1ea4fdbb1fb10b29db2b15764009e3c2d70eb631b7f2",
+      "bytes": 2951
     },
     {
       "path": "docs/quickstart.pt-BR.md",

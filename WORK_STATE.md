@@ -14,7 +14,7 @@ Wheel and sdist are built, with the wheel built from sdist. Installation outside
 
 Commands from this directory: `uv sync --locked`; `uv run python scripts/verify.py`; `uv build`; `uv run python scripts/inventory.py`; `uv run pip-audit --format json --output evidence/dependency-audit.json`. Clean install must be outside this source tree. docs/verification.md records scope and limits; final logs take precedence over older review observations.
 
-Publication preparation: README, Portuguese usage guide, MIT metadata/text, repository links, private reporting channel and manual-only public-repository CI are prepared. The catalog rights-only change is frozen as v4 with previous hashes retained. Publication checks are recorded in evidence/publication and docs/publication.md. Next: repeat local verification and clean package installation, independent release review, create/push public repository, run free standard Windows/Linux CI, tag exact verified head and publish checked artifacts. Current remote outcomes must be verified before claiming release success.
+Publication state: MIT source is public at https://github.com/kayammaori2-afk/repertorio. GitHub private vulnerability reporting is enabled. Manual Windows/Linux CI run 43927397744 passed; public-clone demo and exact evaluation reproduction passed. The original development history is preserved only on local-development-history; public main begins with the reviewed snapshot and noreply author identity. Tag v0.1.0 and its final uploaded assets are verified through the external release receipt/manifest; do not infer a public asset from a local filename.
 
 Research still requires specialist review before any recruitment. Remote ChatGPT, a hosted service and PyPI publication are outside this release.
 

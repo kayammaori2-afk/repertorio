@@ -11,3 +11,9 @@ Release checks and their measured results are recorded in `evidence/publication/
 Limits remain explicit: no participant experiment, independent pedagogical validation, remote ChatGPT deployment, hosted service or PyPI publication. AI authorship and owner contributions remain described in [contribution.md](contribution.md).
 
 The release review is [recorded here](../evidence/publication/review.md). Its manifest mismatch was repaired and the final 131-test gate passed. Follow-up improvements protect common export/credential filenames from accidental Git inclusion and make all host examples use explicit private database paths. The [fresh clean-wheel record](../evidence/clean-install.json) and [license/ranking checks](../evidence/publication/local-checks.json) identify the current artifacts. Historical review observations do not override these later execution records.
+
+## Executed public-source checks
+
+Both Windows and Linux jobs passed in [manual CI run 43927397744](https://github.com/kayammaori2-afk/repertorio/actions/runs/43927397744), on source commit `aff0280b9dc325b334249403f7daea88926b22d0`. The [CI record](../evidence/publication/ci.json) lists each step. A fresh public clone installed the lockfile, ran the real two-process demo and reproduced eight evaluation outputs byte-for-byte. The [clone record](../evidence/publication/public-clone.json) identifies its commit. A final run on the tagged release commit is linked from the release receipt.
+
+The original local development history remains local. Public history starts from the reviewed source snapshot and uses the owner's GitHub noreply identity. No private profiles, local environments or credentials are included.

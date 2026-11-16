@@ -1,0 +1,21 @@
+{
+  "commit": "aff0280b9dc325b334249403f7daea88926b22d0",
+  "source": "public GitHub clone",
+  "commands": [
+    "uv sync --locked",
+    "uv run repertorio demo",
+    "uv run repertorio evaluate --output DIR"
+  ],
+  "demo_real_subprocesses": 2,
+  "semantic_files_identical": [
+    "results.json",
+    "summary.json",
+    "pairs.json",
+    "contexts.json",
+    "results.csv",
+    "manifest.json",
+    "diagnostics.json",
+    "REPORT.md"
+  ],
+  "passed": true
+}

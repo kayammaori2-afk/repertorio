@@ -10,7 +10,8 @@ Observed on Windows with Python 3.13.5 during the 2026-11-16 local execution. Th
 | Codex CLI 0.167.2, GPT-6 Astra | stdio | Read the Claude-created profile, prepare context, correct familiarity with revision 1, observe revision 2 and fallback | Executed in actual host |
 | VS Code/Copilot | stdio | Example configuration based on documentation; executable path requires platform adaptation | Configuration provided, host flow unobserved |
 | ChatGPT remote custom MCP connection | Remote HTTPS or supported tunnel | Account/workspace permissions and appropriate remote authorization required | Not executed |
-| Linux/macOS hosts | stdio/HTTP | Source and dependency setup designed for supported Python | Local runtime unobserved |
+| Linux, standard GitHub runner | stdio/HTTP | Full source verification and package build | Executed in manual CI |
+| macOS | stdio/HTTP | Source and dependency setup designed for supported Python | Runtime unobserved |
 
 The two host tests used a synthetic database, isolated per-run configuration and the same authorized profile. They demonstrate continuity at the server and an observed host correction. They do not establish that every host prompt, operation or version behaves identically. Raw terminal diagnostics included a separate pre-existing Firebase connector startup warning in Codex. The Repertorio tool calls completed and the recorded profile state verified their effects.
 
@@ -36,3 +37,6 @@ Repertorio's opaque development token and loopback address support local testing
 - https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt
 - https://modelcontextprotocol.io/docs/tools/inspector
 - https://github.com/modelcontextprotocol/python-sdk
+
+
+The public-release [Windows/Linux CI run](https://github.com/kayammaori2-afk/repertorio/actions/runs/43927397744) passed both jobs, including lockfile install, lint/types/tests, evaluation/pilot and package build. These are SDK/process checks; the two actual AI-host observations above remain Windows-specific. A fresh public GitHub clone also ran the demo and reproduced the eight deterministic evaluation files; see `evidence/publication/public-clone.json`.

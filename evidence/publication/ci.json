@@ -1,0 +1,103 @@
+{
+  "run_id": 43927397744,
+  "url": "https://github.com/kayammaori2-afk/repertorio/actions/runs/43927397744",
+  "commit": "aff0280b9dc325b334249403f7daea88926b22d0",
+  "conclusion": "success",
+  "trigger": "manual workflow_dispatch",
+  "jobs": [
+    {
+      "name": "verify (windows-latest, 3.13)",
+      "conclusion": "success",
+      "url": "https://github.com/kayammaori2-afk/repertorio/actions/runs/43927397744/job/133510417632",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install uv==0.13.8",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv sync --locked",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python scripts/verify.py",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "verify (ubuntu-latest, 3.13)",
+      "conclusion": "success",
+      "url": "https://github.com/kayammaori2-afk/repertorio/actions/runs/43927397744/job/133510418595",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install uv==0.13.8",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv sync --locked",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv run python scripts/verify.py",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}
