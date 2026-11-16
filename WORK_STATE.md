@@ -1,18 +1,18 @@
 # Repertorio execution state
 
-## v0.2 candidate — 2026-11-16
+## v0.2.0 reviewed release — 2026-11-16
 
 The owner requested improved experience/evaluation, autonomous local validation and a prepared user pilot. Root owns this follow-up; prior per-file agent ownership below is historical. Branch: feature/v0.2.0-pilot-ready. The v0.1 release is not changed by this work.
 
 Implemented generated host snippets, bilingual read-only learning_options, prospective five-arm tutor evaluation with blinded ratings, and empty pilot materials/readiness/usability analysis. Frozen selector/evaluator/pilot inputs remain unchanged. No human observations or external pedagogical review. A real Codex first-use run exposed omitted experience status; corrected guidance was re-exercised on a fresh synthetic profile. TOML paths with non-BMP Unicode are regression-tested.
 
-Another-family review attempt returned Claude subscription usage_limit_reached (429). An independent Codex review uses a supplied numbered source snapshot because this CLI's shell startup fails with a package-identity error; it is same-family review, not an equivalent diversity claim. Final evidence and remaining conditions are recorded in docs/v0.2.0.md and evidence/v0.2/.
+The owner explicitly authorized closing the pending Claude review, repairs, merge of PR #1 and publication of v0.2.0. After the subscription reset, Claude Opus 5.5 completed independent static review and two closeouts; all findings were repaired or bounded explicitly and the final verdict has no code blocker. Local source and Python 3.11 package checks passed 175 tests with three local symlink skips. Final published commit, CI and exact artifact checks belong to the release manifest/receipt, not the earlier candidate files. No human research results or expert approval exist. See docs/v0.2.0.md and evidence/v0.2/.
 
 Requested execution uses GPT-6 Astra, Extra High and Standard. The primary chat reports Astra. Implementation agents are explicitly configured as Astra/xhigh, with no premium-speed request. Speed for the current chat cannot be changed by these tools.
 
 The initial specification is docs/specification.txt. On 2026-11-16 the owner subsequently authorized selecting a permissive license and publishing to GitHub with release v0.1.0. MIT is selected for original code/docs/data; the verified target is kayammaori2-afk/repertorio.
 
-## Final local candidate
+## Historical v0.1 local candidate
 
 Persistent core, both transports, CLI, selector, offline evaluation and synthetic pilot are implemented. The final integrated check passed 131 tests, lint and types. Claude Code and Codex exercised continuity on the same synthetic profile; Inspector discovery/read also passed. Sanitized evidence is in evidence/.
 

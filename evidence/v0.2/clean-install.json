@@ -91,5 +91,7 @@
     "pilot/synthetic.csv"
   ],
   "human_observations": 0,
-  "learning_protocol_bundled_in_wheel": true
+  "learning_protocol_bundled_in_wheel": true,
+  "scope": "Historical candidate before Claude corrections; not the final released wheel",
+  "superseded_by": "Final release-manifest.json clean_package_validation and artifact hashes on the v0.2.0 release page"
 }

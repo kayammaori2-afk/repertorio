@@ -25,6 +25,7 @@ ARMS = ("A", "B", "C", "D", "E")
 METRICS = ("correctness", "objective_fit", "analogy_limits", "transfer_prompt")
 FROZEN_FILES = ("plan.json", "cases.json", "jobs.json", "operator-key.json", "rubric.json")
 RESPONSE_BYTES = 128 * 1024 * 1024  # 500 responses, even JSON-escaped non-BMP text.
+INPUT_BYTES = 8_000_000
 RUBRIC = {
     "scores": {
         "0": "absent/wrong",
@@ -59,17 +60,19 @@ class Case(StrictRecord):
     profile: Profile
 
 
-def read_json(path: Path, max_bytes: int = 8_000_000) -> Any:
+def read_json(path: Path, max_bytes: int = INPUT_BYTES) -> Any:
     if path.stat().st_size > max_bytes:
         raise ValueError(f"Research file exceeds its {max_bytes}-byte collection budget.")
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def write_json(path: Path, value: Any) -> None:
+def write_json(path: Path, value: Any, *, replace: bool = False) -> None:
     from .cli import write_private
 
     write_private(
-        path, json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False) + "\n"
+        path,
+        json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False) + "\n",
+        replace=replace,
     )
 
 
@@ -172,6 +175,23 @@ def prepare(output: Path, cases_path: Path | None = None, seed: int = 20261117) 
         "case_author_ids": [],
         "interpretation": "Tutor output quality only. No human learning endpoint. No independent provenance is authenticated.",
     }
+    frozen_inputs = {
+        "jobs.json": jobs,
+        "operator-key.json": key,
+        "cases.json": {"origin": origin, "cases": cases},
+        "plan.json": plan,
+        "rubric.json": RUBRIC,
+    }
+    for name, value in frozen_inputs.items():
+        size = len(
+            (json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False) + "\n").encode(
+                "utf-8"
+            )
+        )
+        if size > INPUT_BYTES:
+            raise ValueError(
+                f"Prepared {name} exceeds the frozen-input byte budget; reduce the case collection."
+            )
     output.mkdir(parents=True, exist_ok=False)
     write_json(output / "jobs.json", jobs)
     write_json(output / "operator-key.json", key)
@@ -189,6 +209,13 @@ def prepare(output: Path, cases_path: Path | None = None, seed: int = 20261117) 
 
 
 def freeze(directory: Path) -> dict[str, Any]:
+    if (
+        read_json(directory / "responses.json", RESPONSE_BYTES) != []
+        or (directory / "blind-key.json").exists()
+    ):
+        raise ValueError(
+            "Freeze before collecting responses or creating a blinding key; start a new experiment."
+        )
     plan = read_json(directory / "plan.json")
     for field in ("provider", "model_version", "language"):
         if (
@@ -377,6 +404,7 @@ def analyze(directory: Path, ratings_path: Path, packet_directory: Path) -> dict
     if not by_packet:
         raise ValueError("No completed responses to score; all jobs failed.")
     key = read_json(directory / "operator-key.json")
+    planned_cases = {entry["case_id"] for entry in key.values()}
     cases: dict[str, dict[str, Any]] = {}
     agreements: list[bool] = []
     for packet_id, scores in by_packet.items():
@@ -399,7 +427,9 @@ def analyze(directory: Path, ratings_path: Path, packet_directory: Path) -> dict
         ]
         groups = sorted({pair["group_id"] for pair in pairs})
         contrasts[f"C_minus_{baseline}"] = {
+            "planned_cases": len(planned_cases),
             "paired_cases": len(pairs),
+            "excluded_case_ids": sorted(planned_cases - {pair["case_id"] for pair in pairs}),
             "pairs": pairs,
             "equal_group_means": {
                 metric: statistics.mean(
@@ -418,6 +448,14 @@ def analyze(directory: Path, ratings_path: Path, packet_directory: Path) -> dict
         "rater_kinds_declared": rater_kinds,
         "case_origin_declared": plan["case_origin_declared"],
         "failed_jobs": blind_key["failed"],
+        "failed_jobs_by_arm": {
+            arm: [
+                {"job_id": identifier, "case_id": key[identifier]["case_id"]}
+                for identifier in blind_key["failed"]
+                if key[identifier]["arm"] == arm
+            ]
+            for arm in ARMS
+        },
         "exact_criterion_agreement": statistics.mean(agreements),
         "contrasts": contrasts,
         "interpretation": "Descriptive tutor-output ratings, NOT student learning or authenticated independent validation. Missing pairs are excluded and failures listed; no efficacy inference or population confidence interval.",

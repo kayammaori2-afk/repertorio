@@ -1,7 +1,74 @@
 {
-  "attempted": "Claude Code subscription read-only review",
-  "status": "not_performed",
-  "error": "usage_limit_reached",
-  "api_error_status": 429,
-  "limit": "No other-family review of v0.2 was obtained. Earlier v0.1 reviews do not cover this change."
+  "status": "completed",
+  "prior_unavailability": {
+    "attempted": "Claude Code subscription read-only review",
+    "status": "not_performed",
+    "error": "usage_limit_reached",
+    "api_error_status": 429,
+    "limit": "No other-family review of v0.2 was obtained. Earlier v0.1 reviews do not cover this change."
+  },
+  "reviews": [
+    {
+      "report": "review-claude-initial.md",
+      "models": [
+        "claude-opus-5-5"
+      ],
+      "duration_ms": 516453,
+      "turns": 61,
+      "mode": "subscription; read-only static review"
+    },
+    {
+      "report": "review-claude-closeout.md",
+      "models": [
+        "claude-opus-5-5"
+      ],
+      "duration_ms": 236032,
+      "turns": 24,
+      "mode": "subscription; read-only static review"
+    },
+    {
+      "report": "review-claude-final.md",
+      "models": [
+        "claude-opus-5-5"
+      ],
+      "duration_ms": 106232,
+      "turns": 20,
+      "mode": "subscription; read-only static review"
+    }
+  ],
+  "final_verdict": "GO; no code blocker; finalize truthful release bookkeeping and commit reviewed tree",
+  "reviewed_code_sha256": {
+    "src/repertorio/__init__.py": "6aff7fa7557eba35328aea2ff65d5156678cf5eb6718cf9cb95bebf01a926795",
+    "src/repertorio/__main__.py": "a9de08c89f086e8cb760af89f1d106ec54913c0fd07651a25f1bed12aa39e30a",
+    "src/repertorio/cli.py": "d302406a07e4ab9caf6acdd5f9fb9503353585c618f3362571b7852e7c75cc4d",
+    "src/repertorio/data/benchmark.json": "2e37204d0a5b6d8b1c8a71889bbbfcea74399a539a6535ad6eeff2e3da84f7e7",
+    "src/repertorio/data/catalog.json": "7a21e10ae5cc79fea06a84690e24ba247cbad68f5de91ddb45da6a20ac061f95",
+    "src/repertorio/data/freeze_history_v1.json": "8901371c8aeedc5fbc03fdd89888a31e90c5a8288da48a546fd044bb34142a67",
+    "src/repertorio/data/freeze_history_v2.json": "38873073133af89823420500030884ed5415e53cddcb16a9e0c88867b8a1bd74",
+    "src/repertorio/data/freeze_history_v2_1.json": "e23cb4574c061df1cdeba71f5513741dd77eaceef3850b935babd5e2a2b037b9",
+    "src/repertorio/data/freeze_history_v3.json": "251c614e800e32b68fc90b10cc5e86cab7b10481b7f50f024e141fdc3f9fec38",
+    "src/repertorio/data/frozen_manifest.json": "8de3a8dca4dc4b267fe8e2fb0b1570fbdc7e259f15ac958ca7d78e3aaa891460",
+    "src/repertorio/data/pilot_items.json": "2a1737e406613057395ea2c1dc2de57b4b81cd2d833f8724f915ee11646e27bc",
+    "src/repertorio/data/preregistration.json": "0db9a90a66b60e31006d7cc462e94394a5eda2df1fcfe0a23b658e3ba415f8b1",
+    "src/repertorio/data/study-guide.pt-BR.md": "2e666fb9ddfb068b567c5f57cb5a0795a9ded6bff00d84676f901bd289bc2559",
+    "src/repertorio/evaluation.py": "c930263873be26cab10ad3d936a85e2809c1b4f6257c6fa193c85a062e2a8643",
+    "src/repertorio/experiment.py": "bdeb7e89b2d0758884d0506be59a0b72ae5c18d8977586439f4d3f3bf4277135",
+    "src/repertorio/models.py": "68f128b428a1bacc39feede00c95dc90335db58f856e08ce595bcc57b904087e",
+    "src/repertorio/onboarding.py": "43930c4e49ffbe170d8649f0350e793b661743162b59342ea3592d64ac518d81",
+    "src/repertorio/pilot.py": "7f55b5c34c23561a6da98de5d78421ebb0c2b838f1b69b868cb7e6ae612afe55",
+    "src/repertorio/selection.py": "719fcc08c116407dcc034803705c2e338c46bf7bb7c07bef6877af6a2021a1ff",
+    "src/repertorio/server.py": "25e2d50200279a1527d2d6f635fef471102ee149e485f7948f8cc1ebeee2daa4",
+    "src/repertorio/setup.py": "69c9bf30ce44ee6970b0011077b1767f650ca503faa740950b082e8b6cf99f7e",
+    "src/repertorio/store.py": "e9e351a7e662057a2fb5e4435ba670144863061344de9646ca9547393747363c",
+    "src/repertorio/study.py": "f99e77d19481531d603a3318244f92581b4e97e2860d175127db801b226f3302",
+    "tests/test_cli.py": "3c829e93f5bd24ab7faa1578a5b13d4223d985ae3aa6cafe3bf22e1c5afdce22",
+    "tests/test_evaluation.py": "6cad2c1c7f3355926c1a8c2eb51ff98008be23976380b38e4f8b01eb2c3b0798",
+    "tests/test_onboarding.py": "6c9a5239771bd5180f9b40f023c70b9fd8f75937b49f2168a7ba68dc1910ac39",
+    "tests/test_protocol.py": "7b805c2776b30fab0c6b8cc5f62fbdf87fcb17abd4bec8c602d005e8e6bb1586",
+    "tests/test_release_review.py": "97304d408a2670a2bf0be43ec69f349feade7544022ff14d0de0622d4ec5f608",
+    "tests/test_research_workflow.py": "aeaae8106bcc1ed76494a1927d70a31fa9eecec8ee21a9fca2599111451e9d25",
+    "tests/test_selection.py": "df29176067fa155409373df1f1600683e00232fd32e947516e1cd2602dd90d77",
+    "tests/test_store.py": "849017aa8d27a062b06a1eb075df2adce1ca838374ab122b5da6272da8fd5be0"
+  },
+  "limits": "Independent AI static review; no tests executed by reviewer, no human expert/security/ethics certification. Final execution records are separate."
 }

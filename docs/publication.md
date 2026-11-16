@@ -1,4 +1,14 @@
-# v0.1.0 release verification
+# Release verification
+
+## v0.2.0
+
+The owner explicitly authorized closing the Claude review, correcting findings, merging PR #1 and publishing v0.2.0. MIT remains unchanged. The independent other-family review and two closeouts are recorded under `evidence/v0.2/`; the final code gate is described in [verification.md](verification.md).
+
+The release process binds the reviewed PR head, the merged tree, Windows/Linux CI, the exact installed wheel and twelve unchanged numerical artifacts in an external `release-manifest.json`. `SHA256SUMS` covers the source ZIP, wheel, sdist, empty pilot kit ZIP and manifest. The [v0.2.0 release page](https://github.com/kayammaori2-afk/repertorio/releases/tag/v0.2.0) is the source of publication status; uploaded assets are downloaded again and compared with their local hashes before completion is reported. Historical candidate checks remain labeled and do not identify the final wheel.
+
+No human study or educational benefit is claimed. Pilot readiness still requires genuine human reviews, operational details, consent and participants. No remote ChatGPT endpoint, hosted service or package-registry publication is included.
+
+## Historical v0.1.0 release verification
 
 The owner authorized license selection and public GitHub publication on 2026-11-16. The selected license is MIT for code, documentation and original bundled data. Repository: https://github.com/kayammaori2-afk/repertorio. Release: https://github.com/kayammaori2-afk/repertorio/releases/tag/v0.1.0.
 

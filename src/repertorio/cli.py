@@ -400,6 +400,9 @@ def parser() -> argparse.ArgumentParser:
     for name in ("check", "consent", "freeze", "analyze-usability"):
         stage = study_commands.add_parser(name)
         stage.add_argument("--directory", type=Path, required=True)
+    learning = study_commands.add_parser("analyze-learning")
+    learning.add_argument("--directory", type=Path, required=True)
+    learning.add_argument("--output", type=Path, required=True)
     demo = commands.add_parser(
         "demo", help="Run a synthetic MCP demonstration in a temporary database unless --db is provided."
     )
@@ -485,6 +488,8 @@ def main(argv: list[str] | None = None) -> int:
                 return 0 if output["ready_by_operator_declarations"] else 3
             elif args.study_command == "freeze":
                 output = study.freeze(args.directory)
+            elif args.study_command == "analyze-learning":
+                output = study.analyze_learning(args.directory, args.output)
             else:
                 output = study.analyze_usability(args.directory)
         elif args.command == "demo":

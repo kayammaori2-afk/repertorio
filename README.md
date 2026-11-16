@@ -4,11 +4,11 @@
 
 Repertorio is a local MCP server that gives an assistant access to your repertoire, activity evidence and familiar examples. Correct something once; the next authorized session uses the corrected profile. Your assistant conducts the lesson. Repertorio supplies persistent, structured context with explicit limits.
 
-[Get started](#get-started) · [Guia em português](docs/quickstart.pt-BR.md) · [Download v0.1.0](https://github.com/kayammaori2-afk/repertorio/releases/tag/v0.1.0) · [Evidence](docs/verification.md) · [MIT license](LICENSE)
+[Get started](#get-started) · [Guia em português](docs/quickstart.pt-BR.md) · [Download v0.2.0](https://github.com/kayammaori2-afk/repertorio/releases/tag/v0.2.0) · [Evidence](docs/verification.md) · [MIT license](LICENSE)
 
 No separate chat interface. No LLM API key, embedding service or cloud account required by the server. Your chosen assistant has its own access requirements.
 
-**v0.2.0 candidate:** easier first use, prospective tutor evaluation and an empty adult pilot kit. [Changes and limits](docs/v0.2.0.md). Published stable: v0.1.0. New commands below require this candidate's source/package.
+**New in v0.2.0:** easier first use, prospective tutor evaluation and an empty adult pilot kit. [Changes and limits](docs/v0.2.0.md). The kit prepares a study; human reviews, consent and participant observations remain to be obtained.
 
 ## See the behavior
 
@@ -32,7 +32,6 @@ Install [Python 3.13](https://www.python.org/downloads/) and [uv](https://docs.a
 ```sh
 git clone https://github.com/kayammaori2-afk/repertorio.git
 cd repertorio
-git switch feature/v0.2.0-pilot-ready
 uv sync --locked
 uv run repertorio doctor
 uv run repertorio demo
@@ -46,7 +45,7 @@ To keep a demo transcript and database, choose fresh paths and an empty profile:
 uv run repertorio --db demo.sqlite3 --profile demo demo --output demo-transcript.json
 ```
 
-For a package-only installation, download the wheel from the [release](https://github.com/kayammaori2-afk/repertorio/releases/tag/v0.1.0), install it with `python -m pip install PATH_TO_WHEEL`, then run `repertorio doctor` and `repertorio demo`. The lockfile pins the complete tested environment; the wheel pins direct dependencies. PyPI publication is not part of this release.
+For a package-only installation, download the wheel from the [v0.2.0 release](https://github.com/kayammaori2-afk/repertorio/releases/tag/v0.2.0), install it with `python -m pip install PATH_TO_WHEEL`, then run `repertorio doctor` and `repertorio demo`. The lockfile pins the complete tested environment; the wheel pins direct dependencies. PyPI publication is not part of this release.
 
 ## Connect an assistant
 
@@ -119,7 +118,7 @@ uv run repertorio pilot --output evidence/pilot
 uv build
 ```
 
-The verification command runs lint, types, tests, the offline selector evaluation and artificial pilot analysis, and exits nonzero on failure. Release preparation passed **131 local tests**, real stdio/HTTP flows, an independent Inspector client, and installation outside the source tree. The [verification record](docs/verification.md) identifies exact environments and limits. The [manual CI workflow](.github/workflows/checks.yml) targets Windows and Linux with standard runners; no automatic push/PR trigger is configured.
+The verification command runs lint, types, tests, the offline selector evaluation and artificial pilot analysis, and exits nonzero on failure. Version-specific results cover real stdio/HTTP flows, package installation outside the source tree and the regression suite; earlier Inspector observations are separately dated. The [verification record](docs/verification.md) identifies exact environments and limits. The [manual CI workflow](.github/workflows/checks.yml) targets Windows and Linux with standard runners; no automatic push/PR trigger is configured.
 
 ### What the experiment says
 

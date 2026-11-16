@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 
 import pytest
@@ -116,6 +117,17 @@ def test_full_blinded_scoring_pipeline_is_labeled_synthetic_and_failures_preserv
     analysis = experiment.analyze(directory, sheet, tmp_path / "raters")
     assert analysis["dataset_kind"] == "synthetic_fixture"
     assert analysis["failed_jobs"]
+    key = experiment.read_json(directory / "operator-key.json")
+    failed = key[responses[0]["job_id"]]
+    assert analysis["failed_jobs_by_arm"][failed["arm"]] == [
+        {"job_id": responses[0]["job_id"], "case_id": failed["case_id"]}
+    ]
+    for baseline in ("A", "B", "D", "E"):
+        contrast = analysis["contrasts"][f"C_minus_{baseline}"]
+        assert contrast["planned_cases"] == 2
+        excluded = [failed["case_id"]] if failed["arm"] in {"C", baseline} else []
+        assert contrast["excluded_case_ids"] == excluded
+        assert contrast["paired_cases"] == 2 - len(excluded)
     assert analysis["exact_criterion_agreement"] == 1
     assert analysis["contrasts"]["C_minus_E"]["equal_group_means"]["correctness"] == 0
     sheet.write_text(sheet.read_text().replace("fixture-rater-a", "author"))
@@ -209,7 +221,7 @@ def write_usability(directory, rows):
         writer.writerows(rows)
 
 
-def test_usability_counts_all_enrolled_and_preserves_missingness(tmp_path):
+def test_usability_counts_all_recorded_and_preserves_missingness(tmp_path):
     study.initialize(tmp_path / "study")
     directory = tmp_path / "study"
     rows = usability_fixture(directory)
@@ -218,6 +230,9 @@ def test_usability_counts_all_enrolled_and_preserves_missingness(tmp_path):
     result = study.analyze_usability(directory)
     assert result["dataset_kind"] == "synthetic"
     assert result["participants"] == 2 and result["return_unobserved"] == 2
+    assert result["tasks"]["connect"]["participants_recorded"] == 2
+    assert "enrolled" not in result["tasks"]["connect"]
+    assert result["enrollment_reconciled_with_flow"] is False
     assert result["tasks"]["connect"]["completed_unassisted"] == 1
     assert result["tasks"]["connect"]["outcome_unobserved"] == 1
     rows.pop()
@@ -260,6 +275,12 @@ def test_declared_human_path_requires_unchanged_frozen_materials(tmp_path):
     replace_json(directory / "study.json", protocol)
     consent = directory / "participant/consent-DRAFT.txt"
     assert main(["study", "consent", "--directory", str(directory)]) == 0
+    protocol = experiment.read_json(directory / "study.json")
+    protocol.update(
+        consent_text_reviewed=True,
+        consent_text_reviewed_sha256=hashlib.sha256(consent.read_bytes()).hexdigest(),
+    )
+    replace_json(directory / "study.json", protocol)
     assert study.check(directory)["ready_by_operator_declarations"]
     assert not study.check(directory)["human_reviews_verified_by_software"]
     study.freeze(directory)
@@ -273,7 +294,7 @@ def test_declared_human_path_requires_unchanged_frozen_materials(tmp_path):
     consent.write_text("Changed after freeze", encoding="utf-8")
     with pytest.raises(ValueError, match="readiness declarations"):
         study.analyze_usability(directory)
-    consent.write_text(study.consent_text(protocol), encoding="utf-8")
+    consent.write_bytes(study.consent_text(protocol).encode("utf-8"))
     with (directory / "participant/form-X.txt").open("a", encoding="utf-8") as stream:
         stream.write("Changed after freeze")
     with pytest.raises(ValueError, match="changed after freeze"):

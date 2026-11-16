@@ -72,7 +72,7 @@ repertorio pilot --output evidence/pilot
 python -m repertorio.pilot --input evidence/pilot/synthetic.csv --output evidence/pilot-reanalysis
 ```
 
-Both outputs must be marked synthetic. `synthetic_rows()` includes balanced allocation, mixed outcomes, two missing primary outcomes, four missing retention outcomes, ignored context and protocol deviations. The CSV can be replaced by consented, reviewed study data only after completing the pending protocol fields. Set every row's `dataset_kind` to `human` only for actual human observations; the script checks consistent provenance and never converts simulation into observation. The analysis code has not been validated for a different trial design, clustered assignment or repeated condition crossover.
+Both outputs must be marked synthetic. `synthetic_rows()` includes balanced allocation, mixed outcomes, two missing primary outcomes, four missing retention outcomes, ignored context and protocol deviations. The commands above are for reproducing synthetic output. For actual human data, use `repertorio study analyze-learning --directory PRIVATE_DIR/pilot --output PRIVATE_DIR/learning-analysis` after completing readiness declarations and freezing the empty study before collection. The legacy command remains available but does not enforce the kit's safeguards. Set every row's `dataset_kind` to `human` only for actual human observations; the script checks consistent provenance and never converts simulation into observation. The analysis code has not been validated for a different trial design, clustered assignment or repeated condition crossover.
 
 ## Data dictionary and privacy
 

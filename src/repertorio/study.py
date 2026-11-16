@@ -7,13 +7,14 @@ import hashlib
 import io
 import json
 import math
+import re
 import statistics
 from importlib.resources import files
 from pathlib import Path
 from typing import Any
 
 from .experiment import digest, read_json, write_json
-from .pilot import synthetic_rows
+from .pilot import analyze, synthetic_rows
 
 REQUIRED = (
     "responsible_contact",
@@ -73,6 +74,7 @@ def initialize(output: Path) -> dict[str, Any]:
         "progression_rule": "Review every failure. Before a learning pilot: zero unresolved critical privacy/data-loss defects; at least 5/6 complete first_lesson unassisted and 5/6 resume/correct. These are author-chosen operational thresholds, not validated cutoffs.",
         "generation_settings": {"max_output_tokens": 800, "temperature": 0},
         "consent_text_reviewed": False,
+        "consent_text_reviewed_sha256": None,
         "data_access_and_deletion_tested": False,
         "recruitment_authorized": False,
         **dict.fromkeys(REQUIRED),
@@ -184,9 +186,20 @@ def render_consent(directory: Path) -> dict[str, Any]:
 
     if (directory / "study-freeze.json").exists():
         raise ValueError("Study is frozen; revise materials in a new study version.")
-    text = consent_text(read_json(directory / "study.json"))
+    protocol = read_json(directory / "study.json")
+    text = consent_text(protocol)
+    consent_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    if protocol.get("consent_text_reviewed_sha256") != consent_hash:
+        # Invalidate before writing the new text, so an interrupted render fails closed.
+        protocol.update(consent_text_reviewed=False, consent_text_reviewed_sha256=None)
+        write_json(directory / "study.json", protocol, replace=True)
     write_private(directory / "participant/consent-DRAFT.txt", text, replace=True)
-    return {"consent_rendered": True, "human_review_required": True, "consent_obtained": False}
+    return {
+        "consent_rendered": True,
+        "consent_sha256": consent_hash,
+        "human_review_required": True,
+        "consent_obtained": False,
+    }
 
 
 def check(directory: Path) -> dict[str, Any]:
@@ -207,8 +220,14 @@ def check(directory: Path) -> dict[str, Any]:
     if not consent.strip() or "[" in consent or "RASCUNHO" in consent:
         missing.append("complete_and_review_participant_consent")
     try:
-        if consent != consent_text(protocol):
+        expected_consent = consent_text(protocol)
+        if consent != expected_consent:
             missing.append("render_consent_from_current_fields")
+        if (
+            protocol.get("consent_text_reviewed_sha256")
+            != hashlib.sha256(expected_consent.encode("utf-8")).hexdigest()
+        ):
+            missing.append("consent_review_for_current_text")
     except ValueError:
         missing.append("complete_required_consent_fields")
     settings = protocol.get("generation_settings", {})
@@ -229,6 +248,9 @@ def freeze(directory: Path) -> dict[str, Any]:
         raise ValueError(
             "Pilot has pending fields/reviews. Run study check; no recruitment readiness is claimed."
         )
+    for name, fields in (("usability.csv", USABILITY_FIELDS), ("learning.csv", list(synthetic_rows()[0]))):
+        if (directory / name).read_bytes() != csv_template(fields).encode("utf-8"):
+            raise ValueError("Freeze before recording observations; start a new study version.")
     names = [
         "study.json",
         "LEIA-PRIMEIRO.md",
@@ -242,6 +264,97 @@ def freeze(directory: Path) -> dict[str, Any]:
     manifest = {name: hashlib.sha256((directory / name).read_bytes()).hexdigest() for name in names}
     write_json(directory / "study-freeze.json", manifest)
     return {"status": "locally_frozen", "hashes": manifest, "independent_registration": False}
+
+
+def check_frozen_study(directory: Path) -> dict[str, str]:
+    if check(directory)["pending"]:
+        raise ValueError("Human analysis requires completed readiness declarations.")
+    try:
+        manifest = read_json(directory / "study-freeze.json")
+    except FileNotFoundError:
+        raise ValueError(
+            "Study is not frozen. Freeze reviewed materials before recording observations."
+        ) from None
+    names = {
+        "study.json",
+        "LEIA-PRIMEIRO.md",
+        "participant/consent-DRAFT.txt",
+        "participant/form-baseline.txt",
+        "participant/form-X.txt",
+        "participant/form-Y.txt",
+        "operator/item-bank-with-answers.json",
+        "operator/learning-protocol.md",
+    }
+    if set(manifest) != names or any(
+        hashlib.sha256((directory / name).read_bytes()).hexdigest() != manifest[name] for name in names
+    ):
+        raise ValueError("Study materials changed after freeze; record a new version/cohort.")
+    return manifest
+
+
+def analyze_learning(directory: Path, output: Path) -> dict[str, Any]:
+    """Guard human data and reuse the frozen v0.1 numerical analysis unchanged."""
+    from .cli import write_private
+
+    path = directory / "learning.csv"
+    with path.open("rb") as stream:
+        raw = stream.read(1_048_577)
+    if len(raw) > 1_048_576:
+        raise ValueError("Learning CSV exceeds one MiB.")
+    with io.StringIO(raw.decode("utf-8-sig"), newline="") as csv_stream:
+        reader = csv.DictReader(csv_stream)
+        if reader.fieldnames != list(synthetic_rows()[0]):
+            raise ValueError(
+                "Unexpected learning columns; use the generated template without names or contacts."
+            )
+        rows: list[dict[str, Any]] = list(reader)
+    if not 1 <= len(rows) <= 1000:
+        raise ValueError("Supply 1–1000 observed learning rows; an empty template is not a pilot.")
+    kinds = {row["dataset_kind"] for row in rows}
+    if len(kinds) != 1 or not kinds <= {"synthetic", "human"}:
+        raise ValueError("Uniform synthetic/human provenance is required.")
+    manifest = check_frozen_study(directory) if kinds == {"human"} else None
+    for row in rows:
+        if None in row or any(value is None for value in row.values()):
+            raise ValueError(
+                "Learning rows must match the complete CSV schema; use empty cells for missing values."
+            )
+        if not re.fullmatch(r"p-[0-9a-f]{16}", row["participant_id"]):
+            raise ValueError("Use an opaque p- plus 16 random hexadecimal digits participant ID; no names.")
+        for field in (
+            "baseline_score",
+            "immediate_score",
+            "retention_score",
+            "minutes",
+            "hints",
+            "conceptual_errors",
+        ):
+            row[field] = float(row[field]) if row[field] != "" else None
+            if row[field] is not None and (not math.isfinite(row[field]) or row[field] < 0):
+                raise ValueError("Learning numeric values must be finite nonnegative numbers or missing.")
+        for field in ("context_delivered", "context_used"):
+            if row[field] not in {"True", "False", ""}:
+                raise ValueError(f"{field} must be True, False or missing")
+            row[field] = row[field] == "True" if row[field] else None
+    result = analyze(rows)
+    result["input_sha256"] = hashlib.sha256(raw).hexdigest()
+    result["study_freeze_sha256"] = digest(manifest) if manifest is not None else None
+    result["enrollment_reconciled_with_flow"] = False
+    # Exclusive creation rejects an existing directory or a dangling final symlink.
+    output.mkdir(parents=True, exist_ok=False)
+    write_json(output / "analysis.json", result)
+    title = (
+        "Exploratory human pilot analysis" if kinds == {"human"} else "Synthetic pilot analysis demonstration"
+    )
+    write_private(
+        output / "REPORT.md",
+        f"# {title}\n\n{result['interpretation']}\n\n"
+        f"Participants recorded: {result['participants']}. Reconcile enrollment with flow.csv.\n\n"
+        f"{result['estimand']}\n\n{result['assumptions']}\n\n"
+        "Estimates, missing-outcome bounds and intervals are in analysis.json. "
+        "Declared provenance and local hashes do not authenticate consent or human observations.\n",
+    )
+    return result
 
 
 def analyze_usability(directory: Path) -> dict[str, Any]:
@@ -261,27 +374,9 @@ def analyze_usability(directory: Path) -> dict[str, Any]:
     if len(kinds) != 1 or not kinds <= {"synthetic", "human"}:
         raise ValueError("Uniform synthetic/human provenance is required.")
     if kinds == {"human"}:
-        if check(directory)["pending"]:
-            raise ValueError("Human analysis requires completed readiness declarations.")
-        manifest = read_json(directory / "study-freeze.json")
-        names = {
-            "study.json",
-            "LEIA-PRIMEIRO.md",
-            "participant/consent-DRAFT.txt",
-            "participant/form-baseline.txt",
-            "participant/form-X.txt",
-            "participant/form-Y.txt",
-            "operator/item-bank-with-answers.json",
-            "operator/learning-protocol.md",
-        }
-        if set(manifest) != names or any(
-            hashlib.sha256((directory / name).read_bytes()).hexdigest() != manifest[name] for name in names
-        ):
-            raise ValueError("Study materials changed after freeze; record a new version/cohort.")
+        check_frozen_study(directory)
     observed: dict[tuple[str, str], dict[str, Any]] = {}
     for row in rows:
-        import re
-
         if not re.fullmatch(r"p-[0-9a-f]{16}", row["participant_id"]):
             raise ValueError("Use an opaque p- plus 16 random hexadecimal digits participant ID; no names.")
         key = (row["participant_id"], row["task"])
@@ -316,7 +411,7 @@ def analyze_usability(directory: Path) -> dict[str, Any]:
         task_rows = [row for (_, name), row in observed.items() if name == task]
         times = [row["seconds"] for row in task_rows if row["seconds"] is not None]
         measures[task] = {
-            "enrolled": len(participants),
+            "participants_recorded": len(participants),
             "completed": sum(row["completed"] == "True" for row in task_rows),
             "completed_unassisted": sum(
                 row["completed"] == "True" and row["assisted"] == "False" for row in task_rows
@@ -328,6 +423,7 @@ def analyze_usability(directory: Path) -> dict[str, Any]:
     return {
         "dataset_kind": next(iter(kinds)),
         "participants": len(participants),
+        "enrollment_reconciled_with_flow": False,
         "tasks": measures,
         "returned_within_7_days": sum(value == "True" for value in return_values.values()),
         "return_unobserved": sum(value == "" for value in return_values.values()),
