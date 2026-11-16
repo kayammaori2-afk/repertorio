@@ -1,0 +1,1 @@
+{"command":"repertorio evaluate --output DIR","platform":"Windows-11-10.0.26200-SP0","python":"3.13.5","timing":"One warm-process local sequential pass; all four arms together in ns per case; includes context construction; excludes disk writes. Not an arm latency comparison. Timing is outside deterministic result artifacts."}

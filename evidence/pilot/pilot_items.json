@@ -1,0 +1,145 @@
+{
+  "version": "pilot-bank-v3-post-followup",
+  "origin": "Original hypothetical items rewritten after independent review, before any participants. Not psychometrically equated.",
+  "items": [
+    {
+      "id": "baseline-economics",
+      "form": "baseline",
+      "concept": "marginal_analysis",
+      "context_keywords": [
+        "audio",
+        "mastering"
+      ],
+      "prompt": "Um estúdio já pagou 103 pelo seguro. Finalizar 26 faixas de áudio custa 54; finalizar 27 custa 61. Um cliente oferece 13 pela faixa adicional, sem outra consequência. Deve finalizar a faixa adicional? Mostre o custo e o benefício adicionais e explique como tratar o seguro.",
+      "answer": {
+        "incremental_cost": 7,
+        "incremental_benefit": 13,
+        "net": 6,
+        "decision": "accept",
+        "fixed_cost": "unchanged"
+      }
+    },
+    {
+      "id": "X-economics",
+      "form": "X",
+      "concept": "marginal_analysis",
+      "context_keywords": [
+        "observatory",
+        "telescope"
+      ],
+      "prompt": "Um observatório já pagou 127 pelo seguro. Realizar 16 sessões de observação custa 106; realizar 17 custa 117. Um grupo oferece 19 pela sessão adicional, sem outra consequência. Deve realizar a sessão adicional? Mostre o custo e o benefício adicionais e explique como tratar o seguro.",
+      "answer": {
+        "incremental_cost": 11,
+        "incremental_benefit": 19,
+        "net": 8,
+        "decision": "accept",
+        "fixed_cost": "unchanged"
+      }
+    },
+    {
+      "id": "Y-economics",
+      "form": "Y",
+      "concept": "marginal_analysis",
+      "context_keywords": [
+        "archive",
+        "tapes"
+      ],
+      "prompt": "Um arquivo já pagou 139 pelo seguro. Restaurar 22 fitas custa 146; restaurar 23 custa 159. Um cliente oferece 10 pela fita adicional, sem outra consequência. Deve restaurar a fita adicional? Mostre o custo e o benefício adicionais e explique como tratar o seguro.",
+      "answer": {
+        "incremental_cost": 13,
+        "incremental_benefit": 10,
+        "net": -3,
+        "decision": "decline",
+        "fixed_cost": "unchanged"
+      }
+    },
+    {
+      "id": "baseline-probability",
+      "form": "baseline",
+      "concept": "conditional_probability",
+      "context_keywords": [
+        "reserve",
+        "trees"
+      ],
+      "prompt": "Uma reserva contém 88 árvores, das quais 32 estão na encosta. Entre as árvores da encosta, 14 produzem frutos. Uma árvore é sorteada uniformemente; sabemos que está na encosta. Qual é a probabilidade de produzir frutos? Mostre a fração, calcule o valor e explique o grupo usado no denominador.",
+      "answer": {
+        "numerator": 14,
+        "denominator": 32,
+        "value": 0.4375,
+        "excluded_total": 88
+      }
+    },
+    {
+      "id": "X-probability",
+      "form": "X",
+      "concept": "conditional_probability",
+      "context_keywords": [
+        "museum",
+        "magnetism"
+      ],
+      "prompt": "Um museu possui 104 amostras, das quais 28 são rochas vulcânicas. Entre as rochas vulcânicas, 16 são magnéticas. Uma amostra é sorteada uniformemente; sabemos que é uma rocha vulcânica. Qual é a probabilidade de ser magnética? Mostre a fração, calcule o valor e explique o grupo usado no denominador.",
+      "answer": {
+        "numerator": 16,
+        "denominator": 28,
+        "value": 0.5714285714285714,
+        "excluded_total": 104
+      }
+    },
+    {
+      "id": "Y-probability",
+      "form": "Y",
+      "concept": "conditional_probability",
+      "context_keywords": [
+        "textiles",
+        "dye"
+      ],
+      "prompt": "Um laboratório possui 116 tecidos, dos quais 44 são de algodão. Entre os tecidos de algodão, 22 são tingidos. Um tecido é sorteado uniformemente; sabemos que é de algodão. Qual é a probabilidade de ser tingido? Mostre a fração, calcule o valor e explique o grupo usado no denominador.",
+      "answer": {
+        "numerator": 22,
+        "denominator": 44,
+        "value": 0.5,
+        "excluded_total": 116
+      }
+    }
+  ],
+  "shared_lessons": [
+    {
+      "concept": "marginal_analysis",
+      "text": "Original shared academic example: a wind-tunnel calibration facility has already paid a fixed 211. An additional calibration changes total variable cost from 223 to 229 and adds benefit 31. Compare changes and hold the fixed payment constant. This exact academic example is supplied in every arm, independent of repertoire."
+    },
+    {
+      "concept": "conditional_probability",
+      "text": "Original shared academic example: wildlife observers logged 260 observations, of which 46 were at dawn and 34 of those included birds. Given a uniformly selected dawn observation, the denominator is the dawn subset. This exact academic example is supplied in every arm, independent of repertoire."
+    }
+  ],
+  "rubric": {
+    "economics": [
+      "1 point: correct additional cost from difference of totals",
+      "1 point: identifies additional benefit and compares it with computed increment",
+      "1 point: decision logically follows the stated comparison (carry-forward allowed)",
+      "1 point: explains the insurance payment is unchanged by the marginal decision"
+    ],
+    "probability": [
+      "1 point: correct conditioning group and denominator (one criterion, not two)",
+      "1 point: correct favorable count within that group",
+      "1 point: correctly evaluates the displayed fraction, allowing arithmetic carry-forward",
+      "1 point: explains that the stated condition restricts possible draws to the named group; this can be implicit in saying only that group is considered, without separately discussing the full total"
+    ],
+    "bare_answer": "A bare correct probability gets the value point only; a displayed correct fraction without prose gets denominator, numerator and value points. Economics bare yes/no gets only the decision point if correct; the other points need working/explanation.",
+    "carry_forward": "Probability: an incorrect denominator loses the denominator point, but a correct numerator and correct arithmetic of the stated fraction can earn their points; incorrect full-population reasoning loses the explanation point. A full-total answer such as 16/104=0.1538 receives 2/4 if arithmetic is shown and no correct conditioning explanation is present. A correct fraction without decimal counts as an exact value. Economics: preserve the decision point if it follows the stated incremental comparison; do not award an incorrect cost point.",
+    "errors": [
+      "E_FIXED_INCLUDED: unchanged payment added to incremental cost",
+      "E_TOTAL_OR_AVERAGE: total or average cost used instead of change",
+      "E_COMPARISON: incremental benefit/cost compared incorrectly",
+      "P_DENOMINATOR: conditioning group wrong",
+      "P_NUMERATOR: favorable count outside conditioned group",
+      "P_ARITHMETIC: calculation of stated fraction wrong",
+      "P_CONDITION_EXPLANATION: claimed conditioning leaves full population eligible"
+    ],
+    "counting": "Each error category can occur at most once per participant test; multiple distinct categories are retained. Scorers record codes separately from the score. Missing tests have missing error counts, never inferred from hidden synthetic scores.",
+    "probability_explanation_examples": {
+      "earns_point": "16/28 is approximately 0.571 because we only consider the 28 volcanic rocks. This explicitly links the restricted group to the stated condition, and earns the explanation point.",
+      "does_not_earn_point": "16/28 is approximately 0.571 because 28 is written in the question. This identifies no effect of conditioning and does not earn the explanation point."
+    }
+  }
+}

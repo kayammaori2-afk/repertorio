@@ -1,0 +1,13 @@
+{
+  "license": "MIT",
+  "version": "0.1.0",
+  "previous_manifest": "data/freeze_history_v3.json",
+  "numerical_and_ranking_rows_unchanged": 124,
+  "allowed_difference": "context byte lengths change with license notice text",
+  "wheel_license_text_matches": true,
+  "wheel_metadata_license_expression": "MIT",
+  "frozen_input_hashes_verified": true,
+  "local_document_links_verified": true,
+  "test_result": "131 passed in 46.31s",
+  "passed": true
+}

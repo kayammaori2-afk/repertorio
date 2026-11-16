@@ -1,0 +1,4826 @@
+{
+  "version": "synthetic-cases-v1-audit2",
+  "authorship": "Same implementation agent authored catalog, cases and labels. No external validation.",
+  "cases": [
+    {
+      "id": "opportunity_cost-general",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "general",
+      "objective": "Identify the best feasible alternative forgone when choosing between two purchases.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-shopping": {
+          "grade": 3,
+          "rationale": "Budget and best rejected basket directly demonstrate the requested constrained financial choice."
+        },
+        "oc-time": {
+          "grade": 2,
+          "rationale": "Time allocation preserves the best-alternative relation but needs a switch of units."
+        },
+        "oc-cooking": {
+          "grade": 1,
+          "rationale": "Scarcity is visible but the learner must introduce values to find the best alternative."
+        },
+        "oc-story": {
+          "grade": 2,
+          "rationale": "Foregone rent is explicit, although reading a fictional decision adds narrative overhead."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "opportunity_cost-baseline-strength",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "baseline_strength",
+      "objective": "Explain a zero-price activity whose important cost is a lost evening.",
+      "tags": [
+        "free"
+      ],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 5,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-shopping": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        },
+        "oc-time": {
+          "grade": 3,
+          "rationale": "This example directly exposes the requested exception or limitation."
+        },
+        "oc-cooking": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        },
+        "oc-story": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "opportunity_cost-excluded",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "exclusion",
+      "objective": "Identify the best feasible alternative forgone when choosing between two purchases.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": true,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-shopping": {
+          "grade": 3,
+          "rationale": "Budget and best rejected basket directly demonstrate the requested constrained financial choice."
+        },
+        "oc-time": {
+          "grade": 2,
+          "rationale": "Time allocation preserves the best-alternative relation but needs a switch of units."
+        },
+        "oc-cooking": {
+          "grade": 1,
+          "rationale": "Scarcity is visible but the learner must introduce values to find the best alternative."
+        },
+        "oc-story": {
+          "grade": 2,
+          "rationale": "Foregone rent is explicit, although reading a fictional decision adds narrative overhead."
+        }
+      },
+      "forbidden_reference_ids": [
+        "oc-shopping"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "opportunity_cost-unknown",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "unknown_familiarity",
+      "objective": "Identify the best feasible alternative forgone when choosing between two purchases.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-shopping": {
+          "grade": 3,
+          "rationale": "Budget and best rejected basket directly demonstrate the requested constrained financial choice."
+        },
+        "oc-time": {
+          "grade": 2,
+          "rationale": "Time allocation preserves the best-alternative relation but needs a switch of units."
+        },
+        "oc-cooking": {
+          "grade": 1,
+          "rationale": "Scarcity is visible but the learner must introduce values to find the best alternative."
+        },
+        "oc-story": {
+          "grade": 2,
+          "rationale": "Foregone rent is explicit, although reading a fictional decision adds narrative overhead."
+        }
+      },
+      "forbidden_reference_ids": [
+        "oc-shopping"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "opportunity_cost-corrected",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "corrected_familiarity",
+      "objective": "Identify the best feasible alternative forgone when choosing between two purchases.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 3,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-shopping": {
+          "grade": 3,
+          "rationale": "Budget and best rejected basket directly demonstrate the requested constrained financial choice."
+        },
+        "oc-time": {
+          "grade": 2,
+          "rationale": "Time allocation preserves the best-alternative relation but needs a switch of units."
+        },
+        "oc-cooking": {
+          "grade": 1,
+          "rationale": "Scarcity is visible but the learner must introduce values to find the best alternative."
+        },
+        "oc-story": {
+          "grade": 2,
+          "rationale": "Foregone rent is explicit, although reading a fictional decision adds narrative overhead."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "opportunity_cost-superficial",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "superficial_tags",
+      "objective": "Identify the best feasible alternative forgone when choosing between two purchases.",
+      "tags": [
+        "weather",
+        "route",
+        "time"
+      ],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-shopping": {
+          "grade": 3,
+          "rationale": "Budget and best rejected basket directly demonstrate the requested constrained financial choice."
+        },
+        "oc-time": {
+          "grade": 2,
+          "rationale": "Time allocation preserves the best-alternative relation but needs a switch of units."
+        },
+        "oc-cooking": {
+          "grade": 1,
+          "rationale": "Scarcity is visible but the learner must introduce values to find the best alternative."
+        },
+        "oc-story": {
+          "grade": 2,
+          "rationale": "Foregone rent is explicit, although reading a fictional decision adds narrative overhead."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "marginal_analysis-general",
+      "concept": "marginal_analysis",
+      "domain": "economics",
+      "group_id": "marginal_analysis",
+      "split": "test",
+      "scenario": "general",
+      "objective": "Calculate the additional cost of one more unit while excluding a fixed setup fee.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "ma-cooking": {
+          "grade": 3,
+          "rationale": "One extra portion distinguishes incremental costs from unchanged costs directly."
+        },
+        "ma-shopping": {
+          "grade": 2,
+          "rationale": "An extra purchase is a valid increment but discount and utility qualifications add work."
+        },
+        "ma-commute": {
+          "grade": 1,
+          "rationale": "Additional time and money require a valuation conversion absent from the task."
+        },
+        "ma-time": {
+          "grade": 1,
+          "rationale": "Difficult-to-measure learning benefits add ambiguity to an arithmetic increment task."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "marginal_analysis-baseline-strength",
+      "concept": "marginal_analysis",
+      "domain": "economics",
+      "group_id": "marginal_analysis",
+      "split": "test",
+      "scenario": "baseline_strength",
+      "objective": "Explain why minutes cannot be subtracted from currency without stating a valuation.",
+      "tags": [
+        "valuation"
+      ],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 5,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "ma-cooking": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        },
+        "ma-shopping": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        },
+        "ma-commute": {
+          "grade": 3,
+          "rationale": "This example directly exposes the requested exception or limitation."
+        },
+        "ma-time": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "marginal_analysis-excluded",
+      "concept": "marginal_analysis",
+      "domain": "economics",
+      "group_id": "marginal_analysis",
+      "split": "test",
+      "scenario": "exclusion",
+      "objective": "Calculate the additional cost of one more unit while excluding a fixed setup fee.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": true,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "ma-cooking": {
+          "grade": 3,
+          "rationale": "One extra portion distinguishes incremental costs from unchanged costs directly."
+        },
+        "ma-shopping": {
+          "grade": 2,
+          "rationale": "An extra purchase is a valid increment but discount and utility qualifications add work."
+        },
+        "ma-commute": {
+          "grade": 1,
+          "rationale": "Additional time and money require a valuation conversion absent from the task."
+        },
+        "ma-time": {
+          "grade": 1,
+          "rationale": "Difficult-to-measure learning benefits add ambiguity to an arithmetic increment task."
+        }
+      },
+      "forbidden_reference_ids": [
+        "ma-cooking"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "marginal_analysis-unknown",
+      "concept": "marginal_analysis",
+      "domain": "economics",
+      "group_id": "marginal_analysis",
+      "split": "test",
+      "scenario": "unknown_familiarity",
+      "objective": "Calculate the additional cost of one more unit while excluding a fixed setup fee.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "ma-cooking": {
+          "grade": 3,
+          "rationale": "One extra portion distinguishes incremental costs from unchanged costs directly."
+        },
+        "ma-shopping": {
+          "grade": 2,
+          "rationale": "An extra purchase is a valid increment but discount and utility qualifications add work."
+        },
+        "ma-commute": {
+          "grade": 1,
+          "rationale": "Additional time and money require a valuation conversion absent from the task."
+        },
+        "ma-time": {
+          "grade": 1,
+          "rationale": "Difficult-to-measure learning benefits add ambiguity to an arithmetic increment task."
+        }
+      },
+      "forbidden_reference_ids": [
+        "ma-cooking"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "marginal_analysis-corrected",
+      "concept": "marginal_analysis",
+      "domain": "economics",
+      "group_id": "marginal_analysis",
+      "split": "test",
+      "scenario": "corrected_familiarity",
+      "objective": "Calculate the additional cost of one more unit while excluding a fixed setup fee.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 3,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "ma-cooking": {
+          "grade": 3,
+          "rationale": "One extra portion distinguishes incremental costs from unchanged costs directly."
+        },
+        "ma-shopping": {
+          "grade": 2,
+          "rationale": "An extra purchase is a valid increment but discount and utility qualifications add work."
+        },
+        "ma-commute": {
+          "grade": 1,
+          "rationale": "Additional time and money require a valuation conversion absent from the task."
+        },
+        "ma-time": {
+          "grade": 1,
+          "rationale": "Difficult-to-measure learning benefits add ambiguity to an arithmetic increment task."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "marginal_analysis-superficial",
+      "concept": "marginal_analysis",
+      "domain": "economics",
+      "group_id": "marginal_analysis",
+      "split": "test",
+      "scenario": "superficial_tags",
+      "objective": "Calculate the additional cost of one more unit while excluding a fixed setup fee.",
+      "tags": [
+        "weather",
+        "route",
+        "time"
+      ],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "ma-cooking": {
+          "grade": 3,
+          "rationale": "One extra portion distinguishes incremental costs from unchanged costs directly."
+        },
+        "ma-shopping": {
+          "grade": 2,
+          "rationale": "An extra purchase is a valid increment but discount and utility qualifications add work."
+        },
+        "ma-commute": {
+          "grade": 1,
+          "rationale": "Additional time and money require a valuation conversion absent from the task."
+        },
+        "ma-time": {
+          "grade": 1,
+          "rationale": "Difficult-to-measure learning benefits add ambiguity to an arithmetic increment task."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "conditional_probability-general",
+      "concept": "conditional_probability",
+      "domain": "probability",
+      "group_id": "conditional_probability",
+      "split": "test",
+      "scenario": "general",
+      "objective": "Choose the denominator after being told which subgroup a uniformly sampled object belongs to.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "cp-bags": {
+          "grade": 3,
+          "rationale": "The known bag makes the restricted denominator explicit with countable objects."
+        },
+        "cp-cards": {
+          "grade": 2,
+          "rationale": "Known color also restricts outcomes but requires deck counts."
+        },
+        "cp-weather": {
+          "grade": 1,
+          "rationale": "Historical sampling and future prediction can distract from the denominator."
+        },
+        "cp-shopping": {
+          "grade": 1,
+          "rationale": "A separate order table must be supplied before the example is numerical."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "conditional_probability-baseline-strength",
+      "concept": "conditional_probability",
+      "domain": "probability",
+      "group_id": "conditional_probability",
+      "split": "test",
+      "scenario": "baseline_strength",
+      "objective": "Explain why a historical conditional proportion need not predict future rainfall.",
+      "tags": [
+        "forecast"
+      ],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 5,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "cp-bags": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        },
+        "cp-cards": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        },
+        "cp-weather": {
+          "grade": 3,
+          "rationale": "This example directly exposes the requested exception or limitation."
+        },
+        "cp-shopping": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "conditional_probability-excluded",
+      "concept": "conditional_probability",
+      "domain": "probability",
+      "group_id": "conditional_probability",
+      "split": "test",
+      "scenario": "exclusion",
+      "objective": "Choose the denominator after being told which subgroup a uniformly sampled object belongs to.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": true,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "cp-bags": {
+          "grade": 3,
+          "rationale": "The known bag makes the restricted denominator explicit with countable objects."
+        },
+        "cp-cards": {
+          "grade": 2,
+          "rationale": "Known color also restricts outcomes but requires deck counts."
+        },
+        "cp-weather": {
+          "grade": 1,
+          "rationale": "Historical sampling and future prediction can distract from the denominator."
+        },
+        "cp-shopping": {
+          "grade": 1,
+          "rationale": "A separate order table must be supplied before the example is numerical."
+        }
+      },
+      "forbidden_reference_ids": [
+        "cp-bags"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "conditional_probability-unknown",
+      "concept": "conditional_probability",
+      "domain": "probability",
+      "group_id": "conditional_probability",
+      "split": "test",
+      "scenario": "unknown_familiarity",
+      "objective": "Choose the denominator after being told which subgroup a uniformly sampled object belongs to.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "cp-bags": {
+          "grade": 3,
+          "rationale": "The known bag makes the restricted denominator explicit with countable objects."
+        },
+        "cp-cards": {
+          "grade": 2,
+          "rationale": "Known color also restricts outcomes but requires deck counts."
+        },
+        "cp-weather": {
+          "grade": 1,
+          "rationale": "Historical sampling and future prediction can distract from the denominator."
+        },
+        "cp-shopping": {
+          "grade": 1,
+          "rationale": "A separate order table must be supplied before the example is numerical."
+        }
+      },
+      "forbidden_reference_ids": [
+        "cp-bags"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "conditional_probability-corrected",
+      "concept": "conditional_probability",
+      "domain": "probability",
+      "group_id": "conditional_probability",
+      "split": "test",
+      "scenario": "corrected_familiarity",
+      "objective": "Choose the denominator after being told which subgroup a uniformly sampled object belongs to.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 3,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "cp-bags": {
+          "grade": 3,
+          "rationale": "The known bag makes the restricted denominator explicit with countable objects."
+        },
+        "cp-cards": {
+          "grade": 2,
+          "rationale": "Known color also restricts outcomes but requires deck counts."
+        },
+        "cp-weather": {
+          "grade": 1,
+          "rationale": "Historical sampling and future prediction can distract from the denominator."
+        },
+        "cp-shopping": {
+          "grade": 1,
+          "rationale": "A separate order table must be supplied before the example is numerical."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "conditional_probability-superficial",
+      "concept": "conditional_probability",
+      "domain": "probability",
+      "group_id": "conditional_probability",
+      "split": "test",
+      "scenario": "superficial_tags",
+      "objective": "Choose the denominator after being told which subgroup a uniformly sampled object belongs to.",
+      "tags": [
+        "weather",
+        "route",
+        "time"
+      ],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "cp-bags": {
+          "grade": 3,
+          "rationale": "The known bag makes the restricted denominator explicit with countable objects."
+        },
+        "cp-cards": {
+          "grade": 2,
+          "rationale": "Known color also restricts outcomes but requires deck counts."
+        },
+        "cp-weather": {
+          "grade": 1,
+          "rationale": "Historical sampling and future prediction can distract from the denominator."
+        },
+        "cp-shopping": {
+          "grade": 1,
+          "rationale": "A separate order table must be supplied before the example is numerical."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "independence-general",
+      "concept": "independence",
+      "domain": "probability",
+      "group_id": "independence",
+      "split": "development",
+      "scenario": "general",
+      "objective": "Justify multiplication for independent repeated random draws with restoration between trials.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "in-cards": {
+          "grade": 3,
+          "rationale": "Restoring the distribution explicitly supports multiplication for independent repeated draws."
+        },
+        "in-bags": {
+          "grade": 2,
+          "rationale": "Separate independent randomization illustrates multiplication with an additional assumption."
+        },
+        "in-weather": {
+          "grade": 0,
+          "rationale": "Nearby weather is a counterexample rather than the requested independent repeated trial."
+        },
+        "in-commute": {
+          "grade": 0,
+          "rationale": "Shared-route dependence does not model independent repeated trials."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "independence-baseline-strength",
+      "concept": "independence",
+      "domain": "probability",
+      "group_id": "independence",
+      "split": "development",
+      "scenario": "baseline_strength",
+      "objective": "Explain a shared environmental cause that makes separately named events dependent.",
+      "tags": [
+        "environment"
+      ],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 5,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 1,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "in-cards": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        },
+        "in-bags": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        },
+        "in-weather": {
+          "grade": 3,
+          "rationale": "This example directly exposes the requested exception or limitation."
+        },
+        "in-commute": {
+          "grade": 1,
+          "rationale": "The broad concept is present but this reference does not directly address the requested limitation."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "independence-excluded",
+      "concept": "independence",
+      "domain": "probability",
+      "group_id": "independence",
+      "split": "development",
+      "scenario": "exclusion",
+      "objective": "Justify multiplication for independent repeated random draws with restoration between trials.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": true,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "in-cards": {
+          "grade": 3,
+          "rationale": "Restoring the distribution explicitly supports multiplication for independent repeated draws."
+        },
+        "in-bags": {
+          "grade": 2,
+          "rationale": "Separate independent randomization illustrates multiplication with an additional assumption."
+        },
+        "in-weather": {
+          "grade": 0,
+          "rationale": "Nearby weather is a counterexample rather than the requested independent repeated trial."
+        },
+        "in-commute": {
+          "grade": 0,
+          "rationale": "Shared-route dependence does not model independent repeated trials."
+        }
+      },
+      "forbidden_reference_ids": [
+        "in-cards"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "independence-unknown",
+      "concept": "independence",
+      "domain": "probability",
+      "group_id": "independence",
+      "split": "development",
+      "scenario": "unknown_familiarity",
+      "objective": "Justify multiplication for independent repeated random draws with restoration between trials.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "in-cards": {
+          "grade": 3,
+          "rationale": "Restoring the distribution explicitly supports multiplication for independent repeated draws."
+        },
+        "in-bags": {
+          "grade": 2,
+          "rationale": "Separate independent randomization illustrates multiplication with an additional assumption."
+        },
+        "in-weather": {
+          "grade": 0,
+          "rationale": "Nearby weather is a counterexample rather than the requested independent repeated trial."
+        },
+        "in-commute": {
+          "grade": 0,
+          "rationale": "Shared-route dependence does not model independent repeated trials."
+        }
+      },
+      "forbidden_reference_ids": [
+        "in-cards"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "independence-corrected",
+      "concept": "independence",
+      "domain": "probability",
+      "group_id": "independence",
+      "split": "development",
+      "scenario": "corrected_familiarity",
+      "objective": "Justify multiplication for independent repeated random draws with restoration between trials.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 3,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "in-cards": {
+          "grade": 3,
+          "rationale": "Restoring the distribution explicitly supports multiplication for independent repeated draws."
+        },
+        "in-bags": {
+          "grade": 2,
+          "rationale": "Separate independent randomization illustrates multiplication with an additional assumption."
+        },
+        "in-weather": {
+          "grade": 0,
+          "rationale": "Nearby weather is a counterexample rather than the requested independent repeated trial."
+        },
+        "in-commute": {
+          "grade": 0,
+          "rationale": "Shared-route dependence does not model independent repeated trials."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "independence-superficial",
+      "concept": "independence",
+      "domain": "probability",
+      "group_id": "independence",
+      "split": "development",
+      "scenario": "superficial_tags",
+      "objective": "Justify multiplication for independent repeated random draws with restoration between trials.",
+      "tags": [
+        "weather",
+        "route",
+        "time"
+      ],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "in-cards": {
+          "grade": 3,
+          "rationale": "Restoring the distribution explicitly supports multiplication for independent repeated draws."
+        },
+        "in-bags": {
+          "grade": 2,
+          "rationale": "Separate independent randomization illustrates multiplication with an additional assumption."
+        },
+        "in-weather": {
+          "grade": 0,
+          "rationale": "Nearby weather is a counterexample rather than the requested independent repeated trial."
+        },
+        "in-commute": {
+          "grade": 0,
+          "rationale": "Shared-route dependence does not model independent repeated trials."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "story-allowed",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "progress_allowed",
+      "objective": "Explain the cooperative room decision.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-story": {
+          "grade": 3,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-shopping": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-time": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-cooking": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        }
+      },
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "progress-unknown",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "progress-unknown",
+      "objective": "Explain the cooperative room decision.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": null,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-story": {
+          "grade": 3,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-shopping": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-time": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-cooking": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        }
+      },
+      "forbidden_reference_ids": [
+        "oc-story"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "spoiler-blocked",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "spoiler-blocked",
+      "objective": "Explain the cooperative room decision.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 20,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-story": {
+          "grade": 3,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-shopping": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-time": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-cooking": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        }
+      },
+      "forbidden_reference_ids": [
+        "oc-story"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "edition-wrong",
+      "concept": "opportunity_cost",
+      "domain": "economics",
+      "group_id": "opportunity_cost",
+      "split": "development",
+      "scenario": "edition-wrong",
+      "objective": "Explain the cooperative room decision.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "other-v1"
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "oc-story": {
+          "grade": 3,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-shopping": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-time": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        },
+        "oc-cooking": {
+          "grade": 0,
+          "rationale": "The requested cooperative room decision appears only in the original story; other references are not the requested material."
+        }
+      },
+      "forbidden_reference_ids": [
+        "oc-story"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "empty-profile",
+      "concept": "conditional_probability",
+      "domain": "probability",
+      "group_id": "conditional_probability",
+      "split": "test",
+      "scenario": "empty_profile",
+      "objective": "Explain conditioning.",
+      "tags": [],
+      "profile": {
+        "repertoire": [],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {},
+      "forbidden_reference_ids": [
+        "cp-bags",
+        "cp-weather",
+        "cp-cards",
+        "cp-shopping"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "outside-catalog",
+      "concept": "outside_catalog",
+      "domain": "other",
+      "group_id": "outside_catalog",
+      "split": "test",
+      "scenario": "outside_catalog",
+      "objective": "Explain general equilibrium existence.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 2,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {},
+      "forbidden_reference_ids": [],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    },
+    {
+      "id": "none-familiar",
+      "concept": "independence",
+      "domain": "probability",
+      "group_id": "independence",
+      "split": "development",
+      "scenario": "none_eligible",
+      "objective": "Explain independent trials.",
+      "tags": [],
+      "profile": {
+        "repertoire": [
+          {
+            "id": "everyday:shopping",
+            "title": "Shopping",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "budget",
+              "prices"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:time",
+            "title": "Time",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "schedule"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cooking",
+            "title": "Cooking",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "alternatives",
+              "ingredients",
+              "portions"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "story:cooperative",
+            "title": "Cooperative",
+            "kind": "book",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "decision",
+              "room"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": "original-v1"
+          },
+          {
+            "id": "everyday:commute",
+            "title": "Commute",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "route",
+              "time"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:bags",
+            "title": "Bags",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "draw"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:weather",
+            "title": "Weather",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "counts",
+              "forecast"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          },
+          {
+            "id": "everyday:cards",
+            "title": "Cards",
+            "kind": "experience",
+            "status": "completed",
+            "affinity": 3,
+            "familiarity": 0,
+            "progress": 100,
+            "spoiler_limit": 100,
+            "elements": [
+              "cards",
+              "counts",
+              "replacement"
+            ],
+            "excluded": false,
+            "source": "self_report",
+            "edition": null
+          }
+        ],
+        "evidence": [],
+        "sessions": []
+      },
+      "grades": {
+        "in-cards": {
+          "grade": 3,
+          "rationale": "Restoring the distribution explicitly supports multiplication for independent repeated draws."
+        },
+        "in-bags": {
+          "grade": 2,
+          "rationale": "Separate independent randomization illustrates multiplication with an additional assumption."
+        },
+        "in-weather": {
+          "grade": 0,
+          "rationale": "Nearby weather is a counterexample rather than the requested independent repeated trial."
+        },
+        "in-commute": {
+          "grade": 0,
+          "rationale": "Shared-route dependence does not model independent repeated trials."
+        }
+      },
+      "forbidden_reference_ids": [
+        "in-cards",
+        "in-bags",
+        "in-weather",
+        "in-commute"
+      ],
+      "expected_constraints_origin": "Explicit scenario expectations added during post-result review; not generated by filter or oracle."
+    }
+  ],
+  "post_result_changes": "Added explicit safety expectations only. Profiles, objectives, grades and rationale unchanged."
+}

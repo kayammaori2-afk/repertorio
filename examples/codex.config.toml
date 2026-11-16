@@ -1,0 +1,3 @@
+[mcp_servers.repertorio]
+command = "ABSOLUTE_PATH_TO_VENV_PYTHON"
+args = ["-m", "repertorio", "--db", "ABSOLUTE_PRIVATE_DATABASE_PATH", "--profile", "student", "serve"]

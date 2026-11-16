@@ -1,0 +1,107 @@
+{
+  "dataset_kind": "synthetic",
+  "participants": 36,
+  "unit": "randomized_adult",
+  "estimand": "C minus B equal-weight average of the low/high stratum-specific mean unassisted scores under allocation; not a sample-weighted population mean",
+  "estimates": {
+    "immediate_score": {
+      "arms": {
+        "A": {
+          "allocated": 12,
+          "observed": 12,
+          "missing": 0,
+          "mean_observed": 4.5
+        },
+        "B": {
+          "allocated": 12,
+          "observed": 11,
+          "missing": 1,
+          "mean_observed": 5.2727272727272725
+        },
+        "C": {
+          "allocated": 12,
+          "observed": 11,
+          "missing": 1,
+          "mean_observed": 5.181818181818182
+        }
+      },
+      "C_minus_B_complete_case_standardized": 0.1666666666666663,
+      "bootstrap_95_percentile": [
+        -1.0333333333333334,
+        1.3499999999999999
+      ],
+      "all_allocated_missing_outcome_bounds": [
+        -0.75,
+        0.5833333333333321
+      ]
+    },
+    "retention_score": {
+      "arms": {
+        "A": {
+          "allocated": 12,
+          "observed": 10,
+          "missing": 2,
+          "mean_observed": 4.1
+        },
+        "B": {
+          "allocated": 12,
+          "observed": 11,
+          "missing": 1,
+          "mean_observed": 4.7272727272727275
+        },
+        "C": {
+          "allocated": 12,
+          "observed": 11,
+          "missing": 1,
+          "mean_observed": 4.636363636363637
+        }
+      },
+      "C_minus_B_complete_case_standardized": 0.16666666666666652,
+      "bootstrap_95_percentile": [
+        -1.0500000000000005,
+        1.3666666666666665
+      ],
+      "all_allocated_missing_outcome_bounds": [
+        -0.75,
+        0.5833333333333321
+      ]
+    }
+  },
+  "bootstrap_repetitions": 2000,
+  "seed": 20261116,
+  "context_ignored": 4,
+  "context_use_missing": 2,
+  "form_by_arm_stratum": {
+    "A|high|X": 3,
+    "A|high|Y": 3,
+    "A|low|X": 3,
+    "A|low|Y": 3,
+    "B|high|X": 3,
+    "B|high|Y": 3,
+    "B|low|X": 3,
+    "B|low|Y": 3,
+    "C|high|X": 3,
+    "C|high|Y": 3,
+    "C|low|X": 3,
+    "C|low|Y": 3
+  },
+  "order_by_arm": {
+    "A|economics_first": 6,
+    "A|probability_first": 6,
+    "B|economics_first": 6,
+    "B|probability_first": 6,
+    "C|economics_first": 6,
+    "C|probability_first": 6
+  },
+  "retention_form_by_arm": {
+    "A|X": 6,
+    "A|Y": 6,
+    "B|X": 6,
+    "B|Y": 6,
+    "C|X": 6,
+    "C|Y": 6
+  },
+  "deviations": 4,
+  "interpretation": "Artificial data exercise analysis, attrition and implementation controls; they are not learning evidence.",
+  "assumptions": "The complete-case estimate requires missingness independent of potential outcome within arm/stratum. Bounds require only scores in [0,8]. Percentile bootstrap resamples independent participants within arm/stratum; small cells and feasibility sampling limit inference. All participants remain assigned to randomized arms."
+}

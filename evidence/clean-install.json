@@ -1,0 +1,149 @@
+{
+  "outside_source_tree": true,
+  "installed_module": "<workspace>\\work\\release-env\\Lib\\site-packages\\repertorio\\__init__.py",
+  "installed_versions": {
+    "annotated-types": "0.8.0",
+    "anyio": "4.16.0",
+    "attrs": "26.1.0",
+    "certifi": "2026.10.23",
+    "cffi": "2.1.1",
+    "click": "8.5.1",
+    "cryptography": "50.0.2",
+    "h11": "0.16.0",
+    "httpcore": "1.0.9",
+    "httpx": "0.28.1",
+    "httpx-sse": "0.4.3",
+    "idna": "3.20",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "mcp": "1.30.0",
+    "pycparser": "3.12",
+    "pydantic": "2.14.3",
+    "pydantic_core": "2.50.4",
+    "pydantic-settings": "2.16.3",
+    "pyjwt": "2.15.1",
+    "python-dotenv": "1.2.4",
+    "python-multipart": "0.0.33",
+    "pywin32": "312",
+    "referencing": "0.37.0",
+    "repertorio-mcp": "0.1.0",
+    "rpds-py": "2026.9.1",
+    "sse-starlette": "3.7.0",
+    "starlette": "1.10.0",
+    "typing_extensions": "4.16.0",
+    "typing-inspection": "0.4.5",
+    "uvicorn": "0.54.0"
+  },
+  "runtime_versions_match_locked_source_environment": true,
+  "commands": [
+    {
+      "check": "doctor",
+      "exit_code": 0,
+      "args": [
+        "--db",
+        "<clean-run>\\clean.sqlite3",
+        "--profile",
+        "synthetic",
+        "doctor"
+      ]
+    },
+    {
+      "check": "demo",
+      "exit_code": 0,
+      "args": [
+        "--db",
+        "<clean-run>\\clean.sqlite3",
+        "--profile",
+        "synthetic",
+        "demo"
+      ]
+    },
+    {
+      "check": "evaluation",
+      "exit_code": 0,
+      "args": [
+        "evaluate",
+        "--output",
+        "<clean-run>\\evaluation"
+      ]
+    },
+    {
+      "check": "pilot",
+      "exit_code": 0,
+      "args": [
+        "pilot",
+        "--output",
+        "<clean-run>\\pilot"
+      ]
+    }
+  ],
+  "semantic_reproduction": [
+    {
+      "file": "results.json",
+      "identical": true
+    },
+    {
+      "file": "summary.json",
+      "identical": true
+    },
+    {
+      "file": "pairs.json",
+      "identical": true
+    },
+    {
+      "file": "contexts.json",
+      "identical": true
+    },
+    {
+      "file": "results.csv",
+      "identical": true
+    },
+    {
+      "file": "manifest.json",
+      "identical": true
+    },
+    {
+      "file": "diagnostics.json",
+      "identical": true
+    },
+    {
+      "file": "REPORT.md",
+      "identical": true
+    }
+  ],
+  "pilot_reproduction": [
+    {
+      "file": "analysis.json",
+      "identical": true
+    },
+    {
+      "file": "pilot_items.json",
+      "identical": true
+    },
+    {
+      "file": "REPORT.md",
+      "identical": true
+    },
+    {
+      "file": "synthetic.csv",
+      "identical": true
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "repertorio_mcp-0.1.0-py3-none-any.whl",
+      "sha256": "354019c87e944dcc9fdc0411b7c3377d0cd6c1703f3765e3e86a377d09815c08",
+      "bytes": 67836,
+      "file_count": 23,
+      "forbidden_files": []
+    },
+    {
+      "name": "repertorio_mcp-0.1.0.tar.gz",
+      "sha256": "0cad2d846a7760bd8d53867790ac9d2cab59f9b5be98c2910d0d744817dbe36b",
+      "bytes": 224365,
+      "file_count": 60,
+      "forbidden_files": []
+    }
+  ],
+  "passed": true
+}

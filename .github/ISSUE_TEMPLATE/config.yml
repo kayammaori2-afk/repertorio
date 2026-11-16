@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security vulnerability privately
+    url: https://github.com/kayammaori2-afk/repertorio/security/advisories/new
+    about: Use the private channel for security issues; do not disclose profiles or tokens publicly.

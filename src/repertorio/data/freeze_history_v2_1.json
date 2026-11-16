@@ -1,0 +1,28 @@
+{
+  "changes": [
+    "Added diagnostics, held-out-first report, group means, tie sensitivity and recall ceilings after results.",
+    "Added explicit forbidden-reference safety expectations without changing original profiles/objectives/grades.",
+    "Clarified shared-author catalog/label dependence and unverifiable chronology.",
+    "Replaced contaminated pilot items before recruitment; repaired rubric/order/form/missingness/estimand reporting.",
+    "Editorial-only correction in pilot X-economics: malformed dezes7 changed to numeric 17 in bank and documentation. No numerical answer, ranker, grade or evaluation result changed."
+  ],
+  "dataset": "synthetic-cases-v1-audit2",
+  "frozen_at": "2026-11-16",
+  "original_manifest": "data/freeze_history_v1.json",
+  "phase": "after_observing_v1_results_and_independent_methodology_review",
+  "policy": "structured-v1",
+  "preregistration_status": "original timing author-asserted, not independently registered or timestamped",
+  "previous_manifest": "data/freeze_history_v2.json",
+  "score_tuning": "none; selector/catalog byte hashes unchanged",
+  "sha256": {
+    "data/benchmark.json": "2e37204d0a5b6d8b1c8a71889bbbfcea74399a539a6535ad6eeff2e3da84f7e7",
+    "data/catalog.json": "ae07c1860cb67bca2d7a0d81687024c89aaea50258a6822df75ad2c86124e520",
+    "data/freeze_history_v1.json": "8901371c8aeedc5fbc03fdd89888a31e90c5a8288da48a546fd044bb34142a67",
+    "data/pilot_items.json": "666abb97f2b8a32b69da04fc397be686051d993ad1e25520dfc935f4342d1f3a",
+    "data/preregistration.json": "0db9a90a66b60e31006d7cc462e94394a5eda2df1fcfe0a23b658e3ba415f8b1",
+    "evaluation.py": "3f2635d76209eaf579464a5978fc4cfdbd0314f5f0f968bc6ffb2d3bb378a45e",
+    "pilot.py": "5325362531a16de8faf2556793cf171ffbf87ea69db4b7b45494bb23c6faa004",
+    "selection.py": "719fcc08c116407dcc034803705c2e338c46bf7bb7c07bef6877af6a2021a1ff"
+  },
+  "version": "freeze-v2.1-editorial"
+}

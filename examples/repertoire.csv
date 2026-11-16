@@ -1,0 +1,2 @@
+id,title,kind,status,affinity,familiarity,progress,elements,excluded,source,language
+everyday:shopping,Compras semanais sintéticas,experience,completed,4,2,100,"[""budget"",""prices"",""alternatives""]",false,self_report,pt-BR

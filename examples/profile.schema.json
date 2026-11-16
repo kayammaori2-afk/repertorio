@@ -1,0 +1,546 @@
+{
+  "$defs": {
+    "Evidence": {
+      "additionalProperties": false,
+      "description": "Origin is a caller-declared category; none of these values attests correctness.",
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "revision": {
+          "default": 1,
+          "maximum": 2147483647,
+          "minimum": 1,
+          "title": "Revision",
+          "type": "integer"
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        },
+        "updated_at": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Updated At"
+        },
+        "concept": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Concept",
+          "type": "string"
+        },
+        "activity_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+          "title": "Activity Id",
+          "type": "string"
+        },
+        "activity_version": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Activity Version",
+          "type": "string"
+        },
+        "help_received": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Help Received",
+          "type": "string"
+        },
+        "result": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Result",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "self_report",
+            "imported",
+            "tutor_assessment",
+            "provisional"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "assessor": {
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Assessor",
+          "type": "string"
+        },
+        "summary": {
+          "anyOf": [
+            {
+              "maxLength": 1200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Summary"
+        },
+        "session_id": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Session Id"
+        },
+        "occurred_at": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Occurred At"
+        }
+      },
+      "required": [
+        "id",
+        "concept",
+        "activity_id",
+        "activity_version",
+        "help_received",
+        "result",
+        "origin",
+        "assessor"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "RepertoireItem": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "revision": {
+          "default": 1,
+          "maximum": 2147483647,
+          "minimum": 1,
+          "title": "Revision",
+          "type": "integer"
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        },
+        "updated_at": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Updated At"
+        },
+        "title": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "kind": {
+          "default": "experience",
+          "enum": [
+            "experience",
+            "book",
+            "film",
+            "series",
+            "anime",
+            "game"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "planned",
+            "started",
+            "completed",
+            "abandoned",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "affinity": {
+          "default": 0,
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Affinity",
+          "type": "integer"
+        },
+        "familiarity": {
+          "default": 0,
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Familiarity",
+          "type": "integer"
+        },
+        "progress": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Progress"
+        },
+        "spoiler_limit": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Spoiler Limit"
+        },
+        "elements": {
+          "items": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Elements",
+          "type": "array"
+        },
+        "excluded": {
+          "default": false,
+          "title": "Excluded",
+          "type": "boolean"
+        },
+        "source": {
+          "default": "self_report",
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "edition": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Edition"
+        },
+        "external_ids": {
+          "additionalProperties": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxProperties": 32,
+          "propertyNames": {
+            "maxLength": 120,
+            "minLength": 1
+          },
+          "title": "External Ids",
+          "type": "object"
+        },
+        "tags": {
+          "items": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 50,
+          "title": "Tags",
+          "type": "array"
+        },
+        "language": {
+          "default": "en",
+          "maxLength": 35,
+          "minLength": 2,
+          "title": "Language",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title"
+      ],
+      "title": "RepertoireItem",
+      "type": "object"
+    },
+    "Session": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "revision": {
+          "default": 1,
+          "maximum": 2147483647,
+          "minimum": 1,
+          "title": "Revision",
+          "type": "integer"
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        },
+        "updated_at": {
+          "anyOf": [
+            {
+              "maxLength": 40,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Updated At"
+        },
+        "objective": {
+          "default": "",
+          "maxLength": 1000,
+          "title": "Objective",
+          "type": "string"
+        },
+        "concept": {
+          "default": "",
+          "maxLength": 300,
+          "title": "Concept",
+          "type": "string"
+        },
+        "catalog_version": {
+          "default": "unknown",
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Catalog Version",
+          "type": "string"
+        },
+        "policy_version": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Policy Version"
+        },
+        "context_reference_ids": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "type": "string"
+          },
+          "maxItems": 50,
+          "title": "Context Reference Ids",
+          "type": "array"
+        },
+        "repertoire_ids": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Repertoire Ids",
+          "type": "array"
+        },
+        "evidence_ids": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "client": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Client"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "usage": {
+          "default": "delivered",
+          "enum": [
+            "delivered",
+            "reported"
+          ],
+          "title": "Usage",
+          "type": "string"
+        },
+        "usage_origin": {
+          "default": "client_reported_delivery",
+          "enum": [
+            "client_reported_delivery",
+            "self_report",
+            "tutor_report"
+          ],
+          "title": "Usage Origin",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "Session",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "repertoire": {
+      "items": {
+        "$ref": "#/$defs/RepertoireItem"
+      },
+      "maxItems": 1000,
+      "title": "Repertoire",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "maxItems": 1000,
+      "title": "Evidence",
+      "type": "array"
+    },
+    "sessions": {
+      "items": {
+        "$ref": "#/$defs/Session"
+      },
+      "maxItems": 1000,
+      "title": "Sessions",
+      "type": "array"
+    }
+  },
+  "title": "Profile",
+  "type": "object"
+}

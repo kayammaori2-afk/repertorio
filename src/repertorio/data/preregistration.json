@@ -1,0 +1,61 @@
+{
+  "version": "internal-prereg-v1",
+  "created": "2026-11-16",
+  "timing": "Author asserts that this design was written before scoring code and before results. This chronology is not independently timestamped or provable from the initial commit. Catalog judgments existed before case grades; this is an internal design record, not independently registered research.",
+  "hypothesis": "For these constructed cases, the structured policy may improve context relevance over favorites; negative differences remain reportable. This is not a learning hypothesis test.",
+  "label_origin": "Same agent authored catalog strength judgments, cases and grades. Catalog judgments informed labels; substantial agreement is expected and can be close to circular. Grades were not arithmetically computed from the score, but are not independent of its inputs.",
+  "split": {
+    "development": [
+      "opportunity_cost",
+      "independence"
+    ],
+    "test": [
+      "marginal_analysis",
+      "conditional_probability",
+      "outside_catalog"
+    ]
+  },
+  "generalization": "Descriptive comparison across predesignated concept groups; no model was fitted, and no external generalization or learned transfer is established.",
+  "score": {
+    "conceptual_fit": 4,
+    "familiarity": 2,
+    "objective_tag_overlap": 3,
+    "documented_prior_use": 1,
+    "affinity": 0
+  },
+  "order": "descending score, ascending reference id; favorites descending affinity then ascending item id/reference id; ablation descending tag overlap then ascending reference id",
+  "limits": {
+    "k": 3,
+    "favorites": 5,
+    "max_context_bytes": 12000,
+    "max_candidates": 100
+  },
+  "primary_metric": "nDCG@3 on cases with at least one eligible positive-grade reference; gain=2^grade-1, log2 discount; missing ranks zero; empty returned lists zero; no eligible positive gold => null (excluded from mean, retained in abstention counts).",
+  "secondary_metrics": [
+    "eligible-positive coverage",
+    "correct and unwarranted abstention",
+    "constraint violations",
+    "context bytes",
+    "paired per-case differences",
+    "scenario slices",
+    "latency reported separately"
+  ],
+  "arms": {
+    "A": "same academic package, no repertoire; ranking metrics not applicable",
+    "B": "up to five safe favorites ordered by affinity, no full ranker; catalog context from favorites then same k and budget",
+    "C": "production prepare_context",
+    "D": "equal eligible candidates and k as C; exact tag-match ranker"
+  },
+  "comparison": "B/C changes available information and policy jointly. C/D isolates ordering on identical hard-filtered candidates. A cannot be ranked.",
+  "uncertainty": "No confidence intervals for this small purposive dependent synthetic benchmark. Report case pairs and concept-group averages with denominators.",
+  "acceptance": "Zero hard-constraint violations, context budgets respected, deterministic semantic artifacts identical on two runs. Sign of relevance differences is not a release gate.",
+  "seed": 20261116,
+  "changes": [
+    {
+      "version": "post-review-v2",
+      "stage": "after observing v1 results",
+      "purpose": "Add reporting diagnostics, explicit safety expectations and provenance clarification; preserve score, affinities, labels and main rankings."
+    }
+  ],
+  "original_timing_claim": "Written before selection scoring code and before any evaluation results. Weights fixed a priori; no optimization or fitting is planned."
+}

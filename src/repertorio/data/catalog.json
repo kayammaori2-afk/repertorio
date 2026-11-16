@@ -1,0 +1,567 @@
+{
+  "version": "original-everyday-v1",
+  "concepts": {
+    "conditional_probability": {
+      "domain": "probability",
+      "language": "en",
+      "examples": "original hypothetical"
+    },
+    "independence": {
+      "domain": "probability",
+      "language": "en",
+      "examples": "original hypothetical"
+    },
+    "marginal_analysis": {
+      "domain": "economics",
+      "language": "en",
+      "examples": "original hypothetical"
+    },
+    "opportunity_cost": {
+      "domain": "economics",
+      "language": "en",
+      "examples": "original hypothetical"
+    }
+  },
+  "references": [
+    {
+      "id": "oc-shopping",
+      "concept": "opportunity_cost",
+      "item_id": "everyday:shopping",
+      "title": "One shopping budget",
+      "required_elements": [
+        "budget",
+        "prices",
+        "alternatives"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 3,
+      "tags": [
+        "budget",
+        "money"
+      ],
+      "mapping": [
+        "A fixed budget makes the two feasible baskets mutually exclusive.",
+        "Choosing basket A forgoes the value of the best feasible alternative B, not the sum of all alternatives."
+      ],
+      "limitation": "Prices alone do not determine personal benefit; money spent and opportunity cost need not coincide.",
+      "diagnostic": "If three baskets are possible, do we add the benefits of both rejected baskets?",
+      "transfer": "A free evening permits either a paid shift worth 70 or a class worth 90 to you. What is the opportunity cost of the class?",
+      "prerequisites": [
+        "feasible alternatives"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#oc-shopping",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "oc-time",
+      "concept": "opportunity_cost",
+      "item_id": "everyday:time",
+      "title": "An evening with two plans",
+      "required_elements": [
+        "schedule",
+        "alternatives"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 2,
+      "tags": [
+        "time",
+        "schedule"
+      ],
+      "mapping": [
+        "An overlapping schedule prevents attending both plans.",
+        "The benefit of the highest-valued foregone feasible plan is the opportunity cost."
+      ],
+      "limitation": "Schedules can sometimes be rearranged; the example assumes the conflict is unavoidable.",
+      "diagnostic": "Does a zero admission price make an activity costless?",
+      "transfer": "A workshop uses a room that could otherwise earn 120 in rent. Identify the foregone benefit.",
+      "prerequisites": [
+        "feasible alternatives"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#oc-time",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "oc-cooking",
+      "concept": "opportunity_cost",
+      "item_id": "everyday:cooking",
+      "title": "Using the last ingredients",
+      "required_elements": [
+        "ingredients",
+        "alternatives"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 1,
+      "tags": [
+        "ingredients",
+        "scarcity"
+      ],
+      "mapping": [
+        "The same scarce ingredients can make one of two dishes.",
+        "Using them for one dish forgoes the best alternative use."
+      ],
+      "limitation": "Ingredients may be divisible and tastes differ; this example treats each complete meal as indivisible.",
+      "diagnostic": "Is the cost necessarily what was paid for the ingredients last month?",
+      "transfer": "An unused machine can produce 8 chairs or 5 tables today. Explain what is forgone by producing tables.",
+      "prerequisites": [
+        "feasible alternatives"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#oc-cooking",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "oc-story",
+      "concept": "opportunity_cost",
+      "item_id": "story:cooperative",
+      "title": "Original story: the cooperative room",
+      "required_elements": [
+        "room",
+        "decision"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 2,
+      "tags": [
+        "room",
+        "rent"
+      ],
+      "mapping": [
+        "In the hypothetical final chapter, the cooperative assigns its only room to free classes.",
+        "The best rejected feasible use was a rental worth 200, making that benefit forgone."
+      ],
+      "limitation": "A fictional decision does not establish real costs or justify prioritizing money over other benefits.",
+      "diagnostic": "Which rejected use determines the opportunity cost?",
+      "transfer": "A public hall can host one event or be rented. Describe the relevant alternative before calculating cost.",
+      "prerequisites": [
+        "feasible alternatives"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#oc-story",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated",
+      "edition": "original-v1",
+      "required_progress": 80,
+      "spoiler_position": 80
+    },
+    {
+      "id": "ma-cooking",
+      "concept": "marginal_analysis",
+      "item_id": "everyday:cooking",
+      "title": "One additional meal portion",
+      "required_elements": [
+        "ingredients",
+        "portions"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 3,
+      "tags": [
+        "increment",
+        "portions"
+      ],
+      "mapping": [
+        "One extra portion changes total ingredient cost by an incremental amount.",
+        "Choose the extra portion when its additional benefit exceeds its additional cost; exclude costs unchanged by that choice."
+      ],
+      "limitation": "Discrete portions and capacity limits matter; this is not a continuous optimization model.",
+      "diagnostic": "Should unchanged rent be added again when deciding to cook one extra portion?",
+      "transfer": "A printer pays a fixed setup fee and 3 per extra poster. A buyer offers 5 for one more. Evaluate only the increment.",
+      "prerequisites": [
+        "difference between totals"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#ma-cooking",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "ma-shopping",
+      "concept": "marginal_analysis",
+      "item_id": "everyday:shopping",
+      "title": "One additional purchase",
+      "required_elements": [
+        "budget",
+        "prices",
+        "alternatives"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 2,
+      "tags": [
+        "unit",
+        "purchase"
+      ],
+      "mapping": [
+        "Compare total benefit and total cost before and after adding one unit.",
+        "The differences, rather than average totals, govern the incremental purchase."
+      ],
+      "limitation": "The extra unit may have a different benefit from earlier units; quantity discounts must be accounted for explicitly.",
+      "diagnostic": "Can an average unit cost replace the cost of the next unit?",
+      "transfer": "An extra hour of practice adds benefit valued at 12 and fatigue valued at 15. Compare the increment.",
+      "prerequisites": [
+        "difference between totals"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#ma-shopping",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "ma-commute",
+      "concept": "marginal_analysis",
+      "item_id": "everyday:commute",
+      "title": "The final leg of a trip",
+      "required_elements": [
+        "route",
+        "time"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 1,
+      "tags": [
+        "route",
+        "minute"
+      ],
+      "mapping": [
+        "Compare the additional minutes saved by a detour with its additional fuel cost.",
+        "Time and money must be converted to an explicitly stated common valuation before subtraction."
+      ],
+      "limitation": "Travel time is uncertain and valuations are personal; the example is not a transport recommendation.",
+      "diagnostic": "Can five minutes and five currency units be subtracted without a conversion?",
+      "transfer": "An extra machine hour yields 18 in output and costs 21 in power and wear. Should it run?",
+      "prerequisites": [
+        "difference between totals",
+        "units"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#ma-commute",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "ma-time",
+      "concept": "marginal_analysis",
+      "item_id": "everyday:time",
+      "title": "An extra study interval",
+      "required_elements": [
+        "schedule",
+        "alternatives"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 2,
+      "tags": [
+        "study",
+        "time"
+      ],
+      "mapping": [
+        "A further study interval can add less learning than the preceding interval.",
+        "Compare the benefit and cost of that next interval, holding previous work fixed."
+      ],
+      "limitation": "Learning is difficult to value precisely; this only illustrates the decision structure.",
+      "diagnostic": "Does the value of all past study tell us the value of the next interval?",
+      "transfer": "A gardener considers one extra hour of watering with benefit 9 and cost 11. Decide using differences.",
+      "prerequisites": [
+        "difference between totals"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#ma-time",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "cp-bags",
+      "concept": "conditional_probability",
+      "item_id": "everyday:bags",
+      "title": "Drawing from a known bag",
+      "required_elements": [
+        "counts",
+        "draw"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 3,
+      "tags": [
+        "counts",
+        "subset"
+      ],
+      "mapping": [
+        "Conditioning on a bag or subset restricts the denominator to that group.",
+        "Count target outcomes within the restricted group, divided by all outcomes in that group."
+      ],
+      "limitation": "Uniform drawing is assumed; unequal selection weights need a different calculation.",
+      "diagnostic": "After learning the bag is blue, should objects in the red bag remain in the denominator?",
+      "transfer": "A club has 30 evening members, 12 of whom cycle. Among evening members, what fraction cycle?",
+      "prerequisites": [
+        "fractions",
+        "restricted sample space"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#cp-bags",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "cp-weather",
+      "concept": "conditional_probability",
+      "item_id": "everyday:weather",
+      "title": "Rain among cloudy days",
+      "required_elements": [
+        "counts",
+        "forecast"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 2,
+      "tags": [
+        "weather",
+        "cloud"
+      ],
+      "mapping": [
+        "Restrict a historical table to days recorded as cloudy.",
+        "The fraction of rainy days in that subset estimates rain conditional on cloud in that dataset."
+      ],
+      "limitation": "A small historical sample need not predict future weather; conditioning is not causation.",
+      "diagnostic": "Is rain given cloud necessarily equal to cloud given rain?",
+      "transfer": "Among 40 packages sent express, 6 arrived late. Find the observed late proportion conditional on express.",
+      "prerequisites": [
+        "fractions",
+        "restricted sample space"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#cp-weather",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "cp-cards",
+      "concept": "conditional_probability",
+      "item_id": "everyday:cards",
+      "title": "A card after its color is known",
+      "required_elements": [
+        "cards",
+        "counts"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 1,
+      "tags": [
+        "card",
+        "color"
+      ],
+      "mapping": [
+        "Knowing a card is red removes black cards from the possible outcomes.",
+        "A red target category is counted within the remaining red cards."
+      ],
+      "limitation": "The deck must have known counts and a uniform draw; this is not a strategy for gambling.",
+      "diagnostic": "Does learning the color physically change which card was drawn?",
+      "transfer": "Of 24 students who chose art, 9 also chose music. Find the proportion choosing music conditional on art.",
+      "prerequisites": [
+        "fractions",
+        "restricted sample space"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#cp-cards",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "cp-shopping",
+      "concept": "conditional_probability",
+      "item_id": "everyday:shopping",
+      "title": "Orders among members",
+      "required_elements": [
+        "budget",
+        "prices",
+        "alternatives"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 2,
+      "tags": [
+        "member",
+        "order"
+      ],
+      "mapping": [
+        "Filter a hypothetical order table to members before counting express delivery.",
+        "The member count, rather than all customers, is the conditional denominator."
+      ],
+      "limitation": "A purchase context requires a supplied table; liking shopping does not imply statistical knowledge.",
+      "diagnostic": "Which group belongs in the denominator for express delivery given membership?",
+      "transfer": "Among 50 manufactured parts passing inspection A, 45 pass B. Estimate B conditional on A in that batch.",
+      "prerequisites": [
+        "fractions",
+        "restricted sample space"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#cp-shopping",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "in-cards",
+      "concept": "independence",
+      "item_id": "everyday:cards",
+      "title": "Two draws with replacement",
+      "required_elements": [
+        "cards",
+        "counts",
+        "replacement"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 3,
+      "tags": [
+        "replacement",
+        "draw"
+      ],
+      "mapping": [
+        "Replacement and reshuffling restore the same deck distribution before the next draw.",
+        "Under uniform independent draws, the first outcome does not change the probability of the second; multiply probabilities for the joint event."
+      ],
+      "limitation": "Without replacement the events can be dependent; physical shuffling quality is an assumption.",
+      "diagnostic": "What changes if the first card is not replaced?",
+      "transfer": "Two independently checked devices each work with probability 0.9. Find the probability both work.",
+      "prerequisites": [
+        "multiplication of fractions"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#in-cards",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "in-bags",
+      "concept": "independence",
+      "item_id": "everyday:bags",
+      "title": "Draws from separate bags",
+      "required_elements": [
+        "counts",
+        "draw"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 2,
+      "tags": [
+        "bag",
+        "separate"
+      ],
+      "mapping": [
+        "One uniform draw from each separately prepared bag leaves the second bag unchanged.",
+        "With independent randomization the joint event probability is the product of the two marginal probabilities."
+      ],
+      "limitation": "Separate containers alone do not guarantee independent randomization; shared hidden causes can induce dependence.",
+      "diagnostic": "Does a different container by itself prove independence?",
+      "transfer": "Two independent fair spinners each have four equal sectors. Find the probability both show sector 1.",
+      "prerequisites": [
+        "multiplication of fractions"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#in-bags",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "in-weather",
+      "concept": "independence",
+      "item_id": "everyday:weather",
+      "title": "Two nearby weather reports",
+      "required_elements": [
+        "counts",
+        "forecast"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 1,
+      "tags": [
+        "weather",
+        "nearby"
+      ],
+      "mapping": [
+        "A shared weather system can affect both reports.",
+        "If observing one changes the probability of the other, independence fails and unconditional probabilities cannot simply be multiplied."
+      ],
+      "limitation": "Correlation and geographic proximity do not quantify the dependence; a joint model or data is needed.",
+      "diagnostic": "Would different town names suffice to justify multiplying rain probabilities?",
+      "transfer": "Two shops share one unreliable electricity line. Explain why separate premises do not establish independent outages.",
+      "prerequisites": [
+        "conditional probability"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#in-weather",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    },
+    {
+      "id": "in-commute",
+      "concept": "independence",
+      "item_id": "everyday:commute",
+      "title": "Delays on a shared route",
+      "required_elements": [
+        "route",
+        "time"
+      ],
+      "required_familiarity": 2,
+      "conceptual_fit": 2,
+      "tags": [
+        "route",
+        "delay"
+      ],
+      "mapping": [
+        "Two vehicles can be delayed by the same road closure.",
+        "The shared event changes conditional delay probabilities, so independence needs justification."
+      ],
+      "limitation": "Different routes can still share weather or demand shocks; this is a conceptual counterexample.",
+      "diagnostic": "If one vehicle is delayed, could that change what you infer about the other?",
+      "transfer": "Two online services share a server. Explain why separate names do not imply independent failure.",
+      "prerequisites": [
+        "conditional probability"
+      ],
+      "source": {
+        "kind": "original_hypothetical",
+        "creator": "Repertorio implementation agent",
+        "locator": "data/catalog.json#in-commute",
+        "rights": "Original illustrative text; MIT license; see the repository LICENSE"
+      },
+      "review_status": "internally_authored_not_expert_validated"
+    }
+  ]
+}

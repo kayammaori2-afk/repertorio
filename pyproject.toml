@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "repertorio-mcp"
+version = "0.1.0"
+description = "Portable pedagogical context for the AI assistant you already use"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = ["mcp==1.30.0", "pydantic==2.14.3", "uvicorn==0.54.0", "anyio==4.16.0", "starlette==1.10.0"]
+
+[project.urls]
+Homepage = "https://github.com/kayammaori2-afk/repertorio"
+Repository = "https://github.com/kayammaori2-afk/repertorio"
+Documentation = "https://github.com/kayammaori2-afk/repertorio#readme"
+Issues = "https://github.com/kayammaori2-afk/repertorio/issues"
+
+[project.scripts]
+repertorio = "repertorio.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=1,<2", "ruff>=0.12,<1", "mypy>=1.15,<2", "pip-audit>=2.9,<3", "build>=1.2,<2"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/repertorio"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "docs", "examples", "scripts", "README.md", "pyproject.toml", "uv.lock", "CONTRIBUTING.md", "SECURITY.md", "CITATION.cff", "CHANGELOG.md", ".github", ".gitattributes", ".gitignore", "LICENSE", "LICENSE-DECISION.md", "CONTRACT.md", "WORK_STATE.md"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+check_untyped_defs = true
+ignore_missing_imports = true
+

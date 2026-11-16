@@ -1,0 +1,8 @@
+* text=auto eol=lf
+# Frozen dataset hashes are byte-based; preserve their exact bytes on every OS.
+src/repertorio/data/*.json -text whitespace=blank-at-eol,space-before-tab,cr-at-eol
+# Captured evidence also retains the exact measured bytes in source archives.
+evidence/** -text -whitespace
+*.whl binary
+*.gz binary
+*.zip binary
